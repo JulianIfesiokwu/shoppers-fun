@@ -4,6 +4,7 @@ import Logo from '../../assets/logo.png'
 
 import StyledHeader from "../Styled/Header.styled";
 import Button from "../Styled/Button.styled";
+import NavList from "../NavList/NavList.component";
 
 const Header = () => {
     return (
@@ -25,10 +26,9 @@ const Header = () => {
                 </div>
 
                 <Button>search</Button>
-                {/* {Navlist} */}
             </form>
 
-            {/* {Navigation} */}
+            <NavList />
             
         </StyledHeader>
     )
