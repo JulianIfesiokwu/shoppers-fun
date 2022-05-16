@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const StyledHeader = styled.div`
   display: flex;
-  justify-content: space-between;
+  align-items: center;
   .logo-container {
     padding-top: 0.25rem;
     width: 30px;
@@ -18,10 +18,8 @@ const StyledHeader = styled.div`
   }
 
   .search-container {
-    display: inline-block;
+    width: 50%;
     display: inline-flex;
-    justify-content: space-between;
-    padding: 0 1rem;
   }
 
   .search-bar {
@@ -34,6 +32,7 @@ const StyledHeader = styled.div`
     padding: 0.5rem;
     outline: none;
     cursor: pointer;
+    width: 65%;
   }
 
   .icon {
@@ -47,6 +46,7 @@ const StyledHeader = styled.div`
     text-align: end;
     outline: none;
     cursor: pointer;
+    width: 30%;
   }
 `;
 

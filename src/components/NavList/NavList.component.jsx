@@ -6,9 +6,9 @@ const NavList = () => {
     return (
         <StyledNavList>
             <li>Deals</li>
-            <li><MdFavorite /> Saved</li>
+            <li><MdFavorite className="icon" size='15'/> Saved</li>
             <li>My Account</li>
-            <li><MdShoppingCart /></li>
+            <li><MdShoppingCart className="icon" size='15'/></li>
         </StyledNavList>
 
     )

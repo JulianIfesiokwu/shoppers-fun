@@ -12,6 +12,10 @@ const StyledNavList = styled.ul`
     vertical-align: middle;
     font-size: 0.8rem;
   }
+
+  .icon {
+    vertical-align: middle;
+  }
 `;
 
 export default StyledNavList;
