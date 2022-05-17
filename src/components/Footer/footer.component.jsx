@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import StyledFooter from "../Styled/Footer.styled";
 import { MdFacebook, } from "react-icons/md";
 import { FaInstagram, FaTwitter, FaTiktok } from 'react-icons/fa'
@@ -20,10 +19,10 @@ const Footer = () => {
                 </ul>
                 <ul className="connected-list">
                     <li className="list-title">Stay connected</li>
-                    <li><Link to={{ pathname: 'https://www.facebook.com/'}} target='_blank'><MdFacebook className="icon" size='20' /> Facebook</Link></li>
-                    <li><Link to={{ pathname: 'https://www.instagram.com/'}} target='_blank'><FaInstagram className="icon" size='20' /> Instagram</Link></li>
-                    <li><Link to={{ pathname: 'https://www.tiktok.com/'}} target='_blank'><FaTiktok className="icon" size='20' /> TikTok</Link></li>
-                    <li><Link to={{ pathname: 'https://www.twitter.com/'}} target='_blank'><FaTwitter /> Twitter </Link></li>
+                    <li><a href='https://www.facebook.com' target='_blank'><MdFacebook className="icon" size='20' /> Facebook</a></li>
+                    <li><a href='https://www.instagram.com' target='_blank'><FaInstagram className="icon" size='20' /> Instagram</a></li>
+                    <li><a href='https://www.tiktok.com' target='_blank'><FaTiktok className="icon" size='20' /> TikTok</a></li>
+                    <li><a href='https://www.twitter.com' target='_blank'><FaTwitter /> Twitter </a></li>
                 </ul>
                 <ul className="about-list">
                     <li className="list-title">About shoppers-fun</li>
