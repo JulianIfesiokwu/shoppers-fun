@@ -3,6 +3,9 @@ import styled from "styled-components";
 const StyledHeader = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #ddd;
   .logo-container {
     padding-top: 0.25rem;
     width: 30px;
@@ -18,21 +21,23 @@ const StyledHeader = styled.div`
   }
 
   .search-container {
-    width: 50%;
     display: inline-flex;
+    align-items: center;
+    width: 60%;
   }
 
   .search-bar {
-    border: 2px solid black;
-    width: 85%;
+    border: 2px solid #222;
+    width: 55%;
+    margin-right: 1rem;
   }
 
   .search-box {
+    width: 63%;
     border: none;
     padding: 0.5rem;
     outline: none;
     cursor: pointer;
-    width: 65%;
   }
 
   .icon {

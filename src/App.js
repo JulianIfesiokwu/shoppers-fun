@@ -1,11 +1,17 @@
 import "./App.css";
-import Header from "./components/Header/Header.component";
+import SharedLayout from "./components/SharedLayout/SharedLayout.component";
+import HomePage from "./pages/HomePage/HomePage.Page";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route path="/Home" element={<HomePage />}></Route>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
