@@ -23,12 +23,12 @@ const StyledHeader = styled.div`
   .search-container {
     display: inline-flex;
     align-items: center;
-    width: 60%;
+    width: 70%;
   }
 
   .search-bar {
     border: 2px solid #222;
-    width: 55%;
+    width: 60%;
     margin-right: 1rem;
   }
 
