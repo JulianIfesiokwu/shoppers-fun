@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import CategoryList from "../../components/CategoryList/CategoryList.component";
 import { carouselImages } from "../../data";
 import { MdChevronLeft, MdChevronRight, MdArrowForward } from "react-icons/md";
 import Button from '../../components/Styled/Button.styled'
@@ -7,6 +8,16 @@ import StyledHomepage from "../../components/Styled/HomePage.styled";
 
 const HomePage = () => {
     const [ current, setCurrent ] = useState(0)
+
+    useEffect(() => {
+        let slider = setInterval(() => {
+            setCurrent(nextSlide)
+        }, 3000)
+        return (
+            () => clearInterval(slider)
+        )
+    }, [current])
+
     const length = carouselImages.length
     const nextSlide = () => setCurrent(current === length - 1 ? 0 : current + 1)
     const prevSlide = () => setCurrent(current === 0 ? length - 1 : current - 1)
@@ -37,9 +48,9 @@ const HomePage = () => {
             }
             <MdChevronRight className="right-chevron" size='70' onClick={nextSlide}/>
         </div>
-        {/* popular brands */}
-        {/* popular categories */}
-        {/* daily deals */}
+        <CategoryList title={'brands'} />
+        <CategoryList title={'categories'} />
+        <CategoryList title={'deals'} />
         </StyledHomepage>
     )
 }
