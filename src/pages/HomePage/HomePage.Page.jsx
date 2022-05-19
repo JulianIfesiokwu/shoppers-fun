@@ -4,6 +4,7 @@ import { carouselImages } from "../../data";
 import { MdChevronLeft, MdChevronRight, MdArrowForward } from "react-icons/md";
 import Button from '../../components/Styled/Button.styled'
 import StyledHomepage from "../../components/Styled/HomePage.styled";
+import { popularBrands } from "../../data";
 
 
 const HomePage = () => {
@@ -48,7 +49,7 @@ const HomePage = () => {
             }
             <MdChevronRight className="right-chevron" size='70' onClick={nextSlide}/>
         </div>
-        <CategoryList title={'brands'} />
+        <CategoryList title={'brands'} popularBrands={popularBrands} />
         <CategoryList title={'categories'} />
         <CategoryList title={'deals'} />
         </StyledHomepage>
