@@ -3,29 +3,24 @@ import { Link } from "react-router-dom";
 import Button from "../Styled/Button.styled";
 import { MdArrowForward } from "react-icons/md";
 import StyledCategoryList from "../Styled/CategoryList.styled";
+import CategoryCard from "../CategoryCard/CategoryCard.component";
 
 const CategoryList = (props) => {
+    const { title, popularBrands } = props
 
     return (
         <StyledCategoryList>
             <div className="title-section">
-                <h2>Explore Popular {props.title}</h2>
+                <h2>Explore Popular {title}</h2>
                 <Link to='/'><Button>See all <MdArrowForward className="icon" size='25'/></Button></Link>
             </div>
-            {/* <div className="all-categories">
-                {props.popularBrands.map((brand, index) => {
+            <div className="all-categories">
+                {popularBrands?.map((item, index) => {
                     return (
-                        <div className="category" key={index}>
-                            <div className="img-container">
-                                <img src={brand.img} alt='' />
-                            </div>
-
-                        </div>
-
+                        <CategoryCard item={item} key={index} className='card' />
                     )
                 })}
-
-            </div> */}
+            </div>
         </StyledCategoryList>
     )
 }

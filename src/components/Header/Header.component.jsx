@@ -18,7 +18,6 @@ const Header = () => {
                 const response = await fetch(categoriesUrl, options)
                 const data = await response.json()
                 setCategories(data)
-                console.log(data)
 
             } catch (err) {
                 console.error(err)
