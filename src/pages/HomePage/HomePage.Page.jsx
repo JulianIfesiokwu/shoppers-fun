@@ -7,7 +7,8 @@ import StyledHomepage from "../../components/Styled/HomePage.styled";
 import { popularBrands } from "../../data";
 
 
-const HomePage = () => {
+const HomePage = (props) => {
+    const { categories } = props
     const [ current, setCurrent ] = useState(0)
 
     useEffect(() => {
@@ -50,7 +51,7 @@ const HomePage = () => {
             <MdChevronRight className="right-chevron" size='70' onClick={nextSlide}/>
         </div>
         <CategoryList title={'brands'} popularBrands={popularBrands} />
-        <CategoryList title={'categories'} />
+        <CategoryList title={'categories'} categories={categories} />
         <CategoryList title={'deals'} />
         </StyledHomepage>
     )

@@ -1,32 +1,13 @@
 import React from "react";
 import { MdSearch } from 'react-icons/md'
 import Logo from '../../assets/logo.png'
-import { options } from "../../utils/utils";
-import { useState, useEffect } from "react";
 
 import StyledHeader from "../Styled/Header.styled";
 import Button from "../Styled/Button.styled";
 import NavList from "../NavList/NavList.component";
 
-const Header = () => {
-    const categoriesUrl = 'https://apidojo-hm-hennes-mauritz-v1.p.rapidapi.com/categories/list?lang=en&country=asia2'
-    const [categories, setCategories] = useState([])
-
-    useEffect(() => {
-        const fetchCategories = async () => {
-            try {
-                const response = await fetch(categoriesUrl, options)
-                const data = await response.json()
-                setCategories(data)
-
-            } catch (err) {
-                console.error(err)
-            }
-        }
-
-        fetchCategories()
-
-    }, [])
+const Header = (props) => {
+    const { categories } = props
 
     return (
         <StyledHeader>

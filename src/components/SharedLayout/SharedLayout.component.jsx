@@ -3,10 +3,11 @@ import Header from "../Header/Header.component";
 import Footer from '../Footer/footer.component'
 import { Outlet } from "react-router-dom";
 
-const SharedLayout = () => {
+const SharedLayout = (props) => {
+    const { categories } = props
     return (
         <>
-            <Header />
+            <Header categories={categories} />
             <Outlet />
             <Footer />
         </>
