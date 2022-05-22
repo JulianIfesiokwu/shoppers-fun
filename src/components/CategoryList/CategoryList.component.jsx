@@ -6,7 +6,9 @@ import StyledCategoryList from "../Styled/CategoryList.styled";
 import CategoryCard from "../CategoryCard/CategoryCard.component";
 
 const CategoryList = (props) => {
-    const { title, popularBrands } = props
+
+    const { categories, title } = props
+    console.log(categories)
 
     return (
         <StyledCategoryList>
@@ -15,11 +17,11 @@ const CategoryList = (props) => {
                 <Link to='/'><Button>See all <MdArrowForward className="icon" size='25'/></Button></Link>
             </div>
             <div className="all-categories">
-                {popularBrands?.map((item, index) => {
+                {/* {popularBrands?.map((item, index) => {
                     return (
                         <CategoryCard item={item} key={index} className='card' />
                     )
-                })}
+                })} */}
             </div>
         </StyledCategoryList>
     )

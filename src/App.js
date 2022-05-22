@@ -10,7 +10,6 @@ function App() {
   const categoriesUrl =
     "https://apidojo-hm-hennes-mauritz-v1.p.rapidapi.com/categories/list?lang=en&country=asia2";
   const [categories, setCategories] = useState([]);
-  console.log(categories);
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -29,7 +28,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<SharedLayout categories={categories} />}>
-          <Route index element={<HomePage />}></Route>
+          <Route index element={<HomePage categories={categories} />}></Route>
           <Route path="*" element={<ErrorPage />}></Route>
         </Route>
       </Routes>

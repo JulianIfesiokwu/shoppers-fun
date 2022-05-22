@@ -18,7 +18,7 @@ const HomePage = (props) => {
         return (
             () => clearInterval(slider)
         )
-    }, [current])
+    }, [setCurrent])
 
     const length = carouselImages.length
     const nextSlide = () => setCurrent(current === length - 1 ? 0 : current + 1)
@@ -50,9 +50,9 @@ const HomePage = (props) => {
             }
             <MdChevronRight className="right-chevron" size='70' onClick={nextSlide}/>
         </div>
-        <CategoryList title={'brands'} popularBrands={popularBrands} />
-        <CategoryList title={'categories'} categories={categories} />
-        <CategoryList title={'deals'} />
+        <CategoryList title={'Brands'} categories={categories} />
+        <CategoryList title={'Categories'} categories={categories} />
+        <CategoryList title={'Deals'} />
         </StyledHomepage>
     )
 }
