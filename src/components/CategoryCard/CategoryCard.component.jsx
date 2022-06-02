@@ -6,10 +6,10 @@ const CategoryCard = (props) => {
 
     return (
         <StyledCategoryCard >
-            {/* <div className="img-container">
-                <img src={item.img} alt='' />
+            <div className="img-container">
+                {/* <img src={item.img} alt='' /> */}
             </div>
-            <h2>{item.name}</h2> */}
+            <h2>{props.name}</h2>
 
         </StyledCategoryCard>
     )

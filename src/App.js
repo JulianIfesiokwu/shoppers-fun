@@ -8,13 +8,18 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   const categoriesUrl =
-    "https://apidojo-hm-hennes-mauritz-v1.p.rapidapi.com/categories/list?lang=en&country=asia2";
+    "https://asos2.p.rapidapi.com/categories/list?country=US&lang=en-US";
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
+    const abortCont = new AbortController();
+
     const fetchCategories = async () => {
       try {
-        const response = await fetch(categoriesUrl, options);
+        const response = await fetch(categoriesUrl, {
+          options,
+          signal: abortCont.signal,
+        });
         const data = await response.json();
         setCategories(data);
       } catch (err) {
@@ -23,7 +28,12 @@ function App() {
     };
 
     fetchCategories();
+
+    return () => {
+      abortCont.abort();
+    };
   }, []);
+
   return (
     <BrowserRouter>
       <Routes>
