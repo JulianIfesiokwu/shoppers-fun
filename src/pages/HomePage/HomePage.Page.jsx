@@ -5,7 +5,6 @@ import { MdChevronLeft, MdChevronRight, MdArrowForward } from "react-icons/md";
 import Button from '../../components/Styled/Button.styled'
 import StyledHomepage from "../../components/Styled/HomePage.styled";
 import { popularBrands } from "../../data";
-import { options } from "../../utils/utils";
 
 
 const HomePage = (props) => {
@@ -13,7 +12,7 @@ const HomePage = (props) => {
     const [ current, setCurrent ] = useState(0)
     let categoryNames = []
     categoryNames.push(categories.map((category) => {
-        return (category.CatName)
+        return (category.name)
     }))
 
     useEffect(() => {
@@ -56,7 +55,6 @@ const HomePage = (props) => {
             <MdChevronRight className="right-chevron" size='70' onClick={nextSlide}/>
         </div>
         <CategoryList name={categoryNames} />
-        <CategoryList title={'Deals'} />
         </StyledHomepage>
     )
 }

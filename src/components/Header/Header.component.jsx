@@ -1,13 +1,13 @@
 import React from "react";
 import { MdSearch } from 'react-icons/md'
 import Logo from '../../assets/logo.png'
+import { categories } from "../../data";
 
 import StyledHeader from "../Styled/Header.styled";
 import Button from "../Styled/Button.styled";
 import NavList from "../NavList/NavList.component";
 
-const Header = (props) => {
-    const { categories } = props
+const Header = () => {
 
     return (
         <StyledHeader>
@@ -23,11 +23,12 @@ const Header = (props) => {
                     <MdSearch  className='icon' size='25'/>
                     <input type="text" className="search-box" placeholder="Search for anything..."/>
                     <select name="search-category" id="search-category">
-                        <option value="">By category</option>
-                        {categories.map((category) => {
-                            const { CatName } = category
+                        <option value="" className="option">By category</option>
+                        {categories.map((category, index) => {
+                            const {name} = category
+                            
                             return (
-                                <option value={CatName} key={CatName}>{CatName}</option>
+                                <option value={name} key={index} className='option'>{name}</option>
                             )
                         })}
                     </select>

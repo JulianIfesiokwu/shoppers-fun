@@ -53,6 +53,10 @@ const StyledHeader = styled.div`
     cursor: pointer;
     width: 30%;
   }
+
+  .option {
+    padding: 0.5rem;
+  }
 `;
 
 export default StyledHeader;

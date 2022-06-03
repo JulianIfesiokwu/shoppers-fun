@@ -4,12 +4,11 @@ import Button from "../Styled/Button.styled";
 import { MdArrowForward } from "react-icons/md";
 import StyledCategoryList from "../Styled/CategoryList.styled";
 import CategoryCard from "../CategoryCard/CategoryCard.component";
-import StyledCategoryCard from "../Styled/CategoryCard.styled";
+import { categories } from "../../data";
 
 
-const CategoryList = (props) => {
+const CategoryList = () => {
 
-    const { names } = props
 
     return (
         <StyledCategoryList>
@@ -18,9 +17,10 @@ const CategoryList = (props) => {
                 <Link to='/'><Button>See all <MdArrowForward className="icon" size='25'/></Button></Link>
             </div>
             <div className="all-categories">
-                {names?.map((name) => {
+                {categories.map((category, index) => {
+                    const {name, img} = category
                     return (
-                        <StyledCategoryCard name={name} />
+                        <CategoryCard name={name} img={img} key={index}/>
                     )
                 })}
             </div>

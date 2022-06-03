@@ -3,7 +3,6 @@ import styled from "styled-components";
 const StyledCategoryList = styled.div`
     margin-top: 2rem;
 
-
     h2 {
         display: inline-block;
     }
@@ -22,7 +21,7 @@ const StyledCategoryList = styled.div`
         flex-wrap: wrap;
         justify-content: space-between;
         gap: 1%;
-        margin-top: 1rem;
+        margin-top: 2rem;
     }
 
     `;
