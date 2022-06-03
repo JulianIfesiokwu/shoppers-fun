@@ -4,16 +4,10 @@ import { carouselImages } from "../../data";
 import { MdChevronLeft, MdChevronRight, MdArrowForward } from "react-icons/md";
 import Button from '../../components/Styled/Button.styled'
 import StyledHomepage from "../../components/Styled/HomePage.styled";
-import { popularBrands } from "../../data";
 
 
-const HomePage = (props) => {
-    const { categories } = props
+const HomePage = () => {
     const [ current, setCurrent ] = useState(0)
-    let categoryNames = []
-    categoryNames.push(categories.map((category) => {
-        return (category.name)
-    }))
 
     useEffect(() => {
         let slider = setInterval(() => {
@@ -54,7 +48,7 @@ const HomePage = (props) => {
             }
             <MdChevronRight className="right-chevron" size='70' onClick={nextSlide}/>
         </div>
-        <CategoryList name={categoryNames} />
+        <CategoryList />
         </StyledHomepage>
     )
 }

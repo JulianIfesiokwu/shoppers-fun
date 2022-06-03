@@ -2,6 +2,7 @@ import React from "react";
 import { MdSearch } from 'react-icons/md'
 import Logo from '../../assets/logo.png'
 import { categories } from "../../data";
+import { Link } from "react-router-dom";
 
 import StyledHeader from "../Styled/Header.styled";
 import Button from "../Styled/Button.styled";
@@ -12,10 +13,12 @@ const Header = () => {
     return (
         <StyledHeader>
             <div className="logo">
+            <Link to="/">
                 <div className="logo-container">
                     <img src={Logo} alt='logo' />
                 </div>
-            <p className="company-name" to='/'>Shoppers-fun</p>
+                <p className="company-name" to='/'>Shoppers-fun</p>
+            </Link>
             </div>
 
             <form className="search-container">

@@ -1,25 +1,26 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-// import { options } from "./utils/utils";
+import DetailedProduct from "./components/DetailedProduct/DetailedProduct.component";
 import SharedLayout from "./components/SharedLayout/SharedLayout.component";
 import HomePage from "./pages/HomePage/HomePage.Page";
 import ErrorPage from "./pages/Error/ErrorPage.Page";
+import ProductsPage from "./pages/Products/Products.Page";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  const categoriesUrl = "https://fakestoreapi.com/products/categories";
-  const [categories, setCategories] = useState([]);
+  const allProducts = "https://fakestoreapi.com/products";
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     const abortCont = new AbortController();
 
     const fetchCategories = async () => {
       try {
-        const response = await fetch(categoriesUrl, {
+        const response = await fetch(allProducts, {
           signal: abortCont.signal,
         });
         const data = await response.json();
-        setCategories(data);
+        setProducts(data);
       } catch (err) {
         console.log(err);
         if (err.name === "AbortError") {
@@ -39,7 +40,15 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
-          <Route index element={<HomePage categories={categories} />}></Route>
+          <Route index element={<HomePage />}></Route>
+          <Route
+            path="/products"
+            element={<ProductsPage products={products} />}
+          ></Route>
+          <Route
+            path="/products/:productId"
+            element={<DetailedProduct />}
+          ></Route>
           <Route path="*" element={<ErrorPage />}></Route>
         </Route>
       </Routes>
