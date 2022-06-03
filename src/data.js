@@ -1,22 +1,22 @@
 export const carouselImages = [
   {
     id: 1,
-    category: "sales",
+    category: "Sales",
     url: "https://images.pexels.com/photos/2292953/pexels-photo-2292953.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
   {
     id: 2,
-    category: "men",
+    category: "Men",
     url: "https://images.pexels.com/photos/7679671/pexels-photo-7679671.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
   {
     id: 3,
-    category: "women",
+    category: "Women",
     url: "https://images.pexels.com/photos/5698855/pexels-photo-5698855.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
   {
     id: 4,
-    category: "children",
+    category: "Children",
     url: "https://images.pexels.com/photos/4715314/pexels-photo-4715314.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
 ];
@@ -99,5 +99,24 @@ export const popularBrands = [
     id: 7,
     name: "Swatch",
     img: "https://images.pexels.com/photos/9898265/pexels-photo-9898265.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  },
+];
+
+export const categories = [
+  {
+    name: "Electronics",
+    img: "https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  },
+  {
+    name: "Jewellery",
+    img: "https://images.pexels.com/photos/248077/pexels-photo-248077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  },
+  {
+    name: "Men's clothing",
+    img: "https://images.pexels.com/photos/297933/pexels-photo-297933.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  },
+  {
+    name: "Women's clothing",
+    img: "https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
 ];
