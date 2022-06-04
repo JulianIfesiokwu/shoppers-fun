@@ -8,7 +8,7 @@ import ProductsPage from "./pages/Products/Products.Page";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  const allProducts = "https://fakestoreapi.com/products";
+  const url = "https://fakestoreapi.com/products";
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -16,15 +16,15 @@ function App() {
 
     const fetchCategories = async () => {
       try {
-        const response = await fetch(allProducts, {
+        const response = await fetch(url, {
           signal: abortCont.signal,
         });
         const data = await response.json();
         setProducts(data);
       } catch (err) {
-        console.log(err);
+        // console.log(err);
         if (err.name === "AbortError") {
-          console.log("yes");
+          // console.log("yes");
         }
       }
     };
@@ -47,7 +47,7 @@ function App() {
           ></Route>
           <Route
             path="/products/:productId"
-            element={<DetailedProduct />}
+            element={<DetailedProduct products={products} />}
           ></Route>
           <Route path="*" element={<ErrorPage />}></Route>
         </Route>

@@ -13,7 +13,6 @@ const ProductsPage = (props) => {
                 </div>
                 <div>
                     <p className="title">Filter by category</p>
-                    {console.log(products)}
                 </div>
                 
             </aside>
@@ -23,8 +22,8 @@ const ProductsPage = (props) => {
                     {products.map((product, index) => {
                         const { id } = product
                         return (
-                            <Link to={`/products/${id}`}>
-                                <ProductCard key={index} {...product} />
+                            <Link to={`/products/${id}`} key={index}>
+                                <ProductCard {...product} />
                             </Link>
                         )
                     })}                                    

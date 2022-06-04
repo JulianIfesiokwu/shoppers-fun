@@ -37,3 +37,8 @@ a {
   text-decoration: none;
   color: black;
 }
+
+/* all icons */
+.icon {
+  vertical-align: middle;
+}

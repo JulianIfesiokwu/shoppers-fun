@@ -5,8 +5,6 @@ import { MdArrowForward } from "react-icons/md";
 import StyledCategoryList from "../Styled/CategoryList.styled";
 import CategoryCard from "../CategoryCard/CategoryCard.component";
 import { categories } from "../../data";
-import ProductsPage from "../../pages/Products/Products.Page";
-
 
 const CategoryList = () => {
 
