@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import CategoryList from "../../components/CategoryList/CategoryList.component";
 import { carouselImages } from "../../data";
 import { MdChevronLeft, MdChevronRight, MdArrowForward } from "react-icons/md";
@@ -37,7 +38,9 @@ const HomePage = () => {
                                     <img src={url} alt={category} />
                                 </div>
                                 <div className="section-info">
-                                    <Button className="select-category">{category.toUpperCase()}<MdArrowForward className="icon"/></Button>
+                                    <Link to={`/products`}>
+                                        <Button className="select-category">{category.toUpperCase()}<MdArrowForward className="icon"/></Button>
+                                    </Link>
                                     <p className="about-image">Discover a world of affordable clothing, shop by category, seasons or check out our deals on offer.</p>
                                 </div>
                             </div>}
