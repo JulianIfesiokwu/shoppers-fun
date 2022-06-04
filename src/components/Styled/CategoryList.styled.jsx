@@ -21,7 +21,11 @@ const StyledCategoryList = styled.div`
         flex-wrap: wrap;
         justify-content: space-between;
         gap: 1%;
-        margin-top: 2rem;
+        margin-top: 2rem; 
+
+        a {
+            width: 20%;
+        }
     }
 
     `;

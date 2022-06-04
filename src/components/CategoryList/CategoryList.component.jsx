@@ -19,7 +19,9 @@ const CategoryList = () => {
                 {categories.map((category, index) => {
                     const {name, img} = category
                     return (
-                        <CategoryCard name={name} img={img} key={index}/>
+                        <Link to={`/products`} key={index}>
+                            <CategoryCard name={name} img={img} />
+                        </Link>
                     )
                 })}
             </div>

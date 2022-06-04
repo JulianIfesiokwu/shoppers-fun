@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const StyledCategoryCard = styled.div`
-width: 23%;
 
   .img-container {
     width: 100%;

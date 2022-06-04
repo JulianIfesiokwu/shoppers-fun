@@ -1,6 +1,8 @@
 import { Link, useParams } from "react-router-dom"
+import ProductCard from "../ProductCard/ProductCard.component";
 import DetailedProductComponent from "../Styled/DetailedProduct.styled"
 import { MdArrowBack, MdOutlineFavoriteBorder, MdOutlineAddShoppingCart } from "react-icons/md";
+import CategoryList from "../CategoryList/CategoryList.component";
 import Button from "../Styled/Button.styled";
 
 const DetailedProduct = (props) => {
@@ -10,8 +12,9 @@ const DetailedProduct = (props) => {
     // get product id
     const { productId } = useParams()
     // get product info
-    const product = allProductsArray.find((product) => product.id === parseInt(productId) )
-        console.log(product)  
+    const product = allProductsArray.find((product) => product.id === parseInt(productId) )    
+    // get similar products
+    const similarProducts = allProductsArray.filter((item) => item.category === product.category)
 
     const { category, price, title, description, rating, image } = product
 
@@ -52,7 +55,20 @@ const DetailedProduct = (props) => {
                 </article>
                 </div>
             </div>
-            <div className="similar"></div>
+            <div>
+                <h2 className="similar-title">Explore similar products</h2>
+                <div className="similar-container">
+                    {similarProducts.map((product, index) => {
+                        const { id } = product
+                        return (
+                            <Link to={`/products/${id}`} key={index}>
+                                <ProductCard {...product} key={index} className='similar-items'/>
+                            </Link>
+                        )
+                    })}
+                </div>
+            </div>
+            <CategoryList />
         </DetailedProductComponent>
     )
 }

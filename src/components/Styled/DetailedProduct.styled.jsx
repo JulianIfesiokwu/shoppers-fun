@@ -37,9 +37,26 @@ const DetailedProductComponent = styled.section`
         width: 70%;
     }
 
-    .interact {
-        display: flex;
+    Button {
+        margin-right: 2rem;
+        margin-top: 2rem;
     }
+
+    .similar-title {
+        margin-bottom: 2rem;
+    }
+
+    .similar-container {
+        margin-top: 2rem;
+        display: flex;
+        gap: 1%;
+
+                a {
+            display: flex;
+            width: 18%;
+        }
+    }
+
     `;
 
 export default DetailedProductComponent
