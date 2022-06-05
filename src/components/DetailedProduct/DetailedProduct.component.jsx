@@ -49,9 +49,9 @@ const DetailedProduct = (props) => {
                     </label>
                 </article>
                 <article className="interact">
-                    <Button> Buy it now</Button>
-                    <Button>< MdOutlineAddShoppingCart className="icon" size='25' /> Add to cart</Button>
-                    <Button><MdOutlineFavoriteBorder className="icon" size='25'/> Add to watchlist</Button>
+                    <Button className="bigger-button"> Buy it now</Button>
+                    <Button>< MdOutlineAddShoppingCart className="icon" size='15' /> Add to cart</Button>
+                    <Button><MdOutlineFavoriteBorder className="icon" size='15'/> Add to watchlist</Button>
                 </article>
                 </div>
             </div>

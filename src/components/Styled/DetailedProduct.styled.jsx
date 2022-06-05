@@ -51,7 +51,7 @@ const DetailedProductComponent = styled.section`
         display: flex;
         gap: 1%;
 
-                a {
+            a {
             display: flex;
             width: 18%;
         }

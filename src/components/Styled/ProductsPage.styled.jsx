@@ -10,7 +10,34 @@ const StyledProductsPage = styled.section`
         display: inline-block;
     }
 
-    .product-list {
+    .search-title {
+        margin-bottom: 2rem;
+    }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        input[type='radio'] {
+            margin-right: 0.5rem;
+        }
+
+    .title {
+        margin-bottom: 1rem;
+        font-weight: 700;
+    }
+
+    svg {
+        cursor: pointer;
+
+        &.not-fill {
+            fill: #ddd;
+        }
+
+        &.fill {
+            fill: red;
+        }
     }
 
     .products-container {
