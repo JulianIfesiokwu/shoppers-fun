@@ -31,11 +31,11 @@ const StyledProductsPage = styled.section`
     svg {
         cursor: pointer;
 
-        &.not-fill {
+        &.not-fill g{
             fill: #ddd;
         }
 
-        &.fill {
+        &.fill g{
             fill: red;
         }
     }

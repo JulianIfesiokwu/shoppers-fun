@@ -22,8 +22,8 @@ const StyledHeader = styled.div`
 
   .search-container {
     display: inline-flex;
-    align-items: center;
-    width: 70%;
+    width: 60%;
+    margin: 0 auto;
   }
 
   .search-bar {

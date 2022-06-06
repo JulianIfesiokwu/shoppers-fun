@@ -11,6 +11,24 @@ function App() {
   const url = "https://fakestoreapi.com/products";
   const [products, setProducts] = useState([]);
 
+  const searchForItem = (e, value) => {
+    // e.preventDefault();
+    console.log(products);
+    if (!value) {
+      // use a modal to ask for search parameter
+      console.log("nothing");
+    }
+    if (value) {
+      // search through products array and display product
+      const possibleProducts = [];
+      const searchedProduct = products.filter((product) => {
+        return product.title.toLowerCase().includes(value.toLowerCase());
+      });
+      possibleProducts.push(searchedProduct);
+      console.log(possibleProducts);
+    }
+  };
+
   useEffect(() => {
     const abortCont = new AbortController();
 
@@ -39,7 +57,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<SharedLayout />}>
+        <Route
+          path="/"
+          element={<SharedLayout searchForItem={searchForItem} />}
+        >
           <Route index element={<HomePage />}></Route>
           <Route
             path="/products"

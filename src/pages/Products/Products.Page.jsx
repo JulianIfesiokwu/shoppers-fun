@@ -61,19 +61,19 @@ const ProductsPage = (props) => {
                     <div>
                         <p className="title">By category</p>
                         <label htmlFor="men">
-                            <input type="radio" id="men" name="category" value="men" />
+                            <input type="checkbox" id="men" value="men" />
                             Men
                         </label>
                         <label htmlFor="women">
-                            <input type="radio" id="women" name="category" value="women" />
+                            <input type="checkbox" id="women" value="women" />
                             Women
                         </label>
                         <label htmlFor="jewellery">
-                            <input type="radio" id="jewellery" name="category" value="jewellery" />
+                            <input type="checkbox" id="jewellery" value="jewellery" />
                             Jewellery
                         </label>
                         <label htmlFor="electronics">
-                            <input type="radio" id="electronics" name="category" value="electronics" />
+                            <input type="checkbox" id="electronics" value="electronics" />
                             Electronics
                         </label>
                     </div>
@@ -89,7 +89,7 @@ const ProductsPage = (props) => {
                             onMouseLeave={() => setHoveredRate(null)} />
                             )
                         })}
-                        <>{selectedRate}</>
+                        <p>{selectedRate}</p>
                     </div>                
             </aside>
             <section className="product-list">
