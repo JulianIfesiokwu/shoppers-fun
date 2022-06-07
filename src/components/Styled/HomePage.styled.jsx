@@ -68,7 +68,7 @@ const StyledHomepage = styled.div`
         top: 60%;
         left: 2%;
         color: white;
-        z-index: 6;
+        z-index: 5;
     }
 
     .select-category {
@@ -90,6 +90,14 @@ const StyledHomepage = styled.div`
         margin-top: 0.5rem;
         font-size: 1.1rem;
         line height: 30px;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .section-info {
+            left: 20%;
+            bottom: 50%;
+            text-align: center;
+        }
     }
 `;
 

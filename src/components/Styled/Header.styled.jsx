@@ -13,6 +13,10 @@ const StyledHeader = styled.div`
     display: inline-block;
   }
 
+  .mobile-menu {
+    display: none;
+  }
+
   .company-name {
     display: inline;
     font-family: "Just Another Hand", cursive;
@@ -20,42 +24,11 @@ const StyledHeader = styled.div`
     font-size: 1.3rem;
   }
 
-  .search-container {
-    display: inline-flex;
-    width: 60%;
-    margin: 0 auto;
-  }
+  @media only screen and (max-width: 600px) {
+    .mobile-menu {
+      display: block;
+    }
 
-  .search-bar {
-    border: 2px solid #222;
-    width: 60%;
-    margin-right: 1rem;
-  }
-
-  .search-box {
-    width: 63%;
-    border: none;
-    padding: 0.5rem;
-    outline: none;
-    cursor: pointer;
-  }
-
-  .icon {
-    vertical-align: middle;
-  }
-
-  select {
-    border: none;
-    border-left: 1px solid black;
-    padding: 0.5rem;
-    text-align: end;
-    outline: none;
-    cursor: pointer;
-    width: 30%;
-  }
-
-  .option {
-    padding: 0.5rem;
   }
 `;
 

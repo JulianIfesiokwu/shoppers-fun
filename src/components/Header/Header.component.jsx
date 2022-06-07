@@ -1,16 +1,17 @@
 import React from "react";
-import { MdSearch } from 'react-icons/md'
 import Logo from '../../assets/logo.png'
-import { useState } from "react";
 import { Link } from "react-router-dom";
-
+import { useState } from "react";
+import { MdOutlineMenu } from "react-icons/md";
 import StyledHeader from "../Styled/Header.styled";
-import Button from "../Styled/Button.styled";
 import NavList from "../NavList/NavList.component";
 
 const Header = (props) => {
-    const [searchValue, setSearchValue] = useState('')
-    const {searchForItem} = props
+    const [menu, setMenu] = useState(false)
+
+    const showMenu = () => {
+        setMenu(!menu)
+    }
 
     return (
         <StyledHeader>
@@ -23,18 +24,8 @@ const Header = (props) => {
                 </Link>
             </div>
 
-            <form className="search-container">
-                <div className="search-bar">
-                    <MdSearch  className='icon' size='25'/>
-                    <input type="text" value={searchValue} onChange={(e) => setSearchValue(e.target.value)} className="search-box" placeholder="Search for anything..."/>
-                </div>
-
-                <Link to={`/products`}>
-                    <Button onClick={(e) => {searchForItem(e, searchValue)}}>search</Button>
-                </Link>
-            </form>
-
-            <NavList />            
+            <MdOutlineMenu className="mobile-menu icon" size='30' onClick={() => showMenu()}/> 
+            <NavList props={props} menu={menu}/>         
             
         </StyledHeader>
     )

@@ -41,5 +41,10 @@ a {
 /* all icons */
 .icon {
   vertical-align: middle;
+  border: none;
+}
+
+.icon:hover {
   cursor: pointer;
 }
+

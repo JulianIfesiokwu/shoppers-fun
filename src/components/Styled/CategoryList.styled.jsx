@@ -28,6 +28,28 @@ const StyledCategoryList = styled.div`
         }
     }
 
+    @media only screen and (max-width: 600px) {
+        h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        Button {
+            margin-left: 0;
+        }
+
+        .all-categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1%;
+            margin-top: 2rem; 
+
+        a {
+            width: 100%;
+            margin-bottom: 1.5rem;
+        }
+    }
+
     `;
 
 export default StyledCategoryList
