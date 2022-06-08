@@ -9,12 +9,6 @@ const StyledNavList = styled.ul`
     margin-left: 1rem;
     display: inline;
     cursor: pointer;
-    vertical-align: middle;
-    font-size: 0.8rem;
-  }
-
-  .icon {
-    vertical-align: middle;
   }
 
   .search-container {
@@ -46,21 +40,28 @@ const StyledNavList = styled.ul`
     display: none;
     flex-direction: column;
     position: absolute;
-    background-color: teal;
-    width: 90%;
+    background-color: white;
     z-index: 10;
+    padding: 1rem 0;
 
-    .show {
+    &.active {
       display: flex;
+      position: absolute;
+      top: 3rem;
+      width: 100%;
     }
 
-    .hide {
-      display: none;
+    li {
+      margin-left: 0;
+      margin-bottom: 0.5rem;
     }
 
-
-
+    .search-container {
+      border: none;
+      border-bottom: 2px solid black;
+    }
   }
+
 `;
 
 export default StyledNavList;

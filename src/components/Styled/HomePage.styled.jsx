@@ -21,7 +21,7 @@ const StyledHomepage = styled.div`
     .slide::before {
         content: "";
         position: absolute;
-        background: rgba(0, 0, 0, 0.1);
+        background: rgba(0, 0, 0, 0.4);
         border-radius: 5px;
         top: 0;
         right: 0;
@@ -94,9 +94,22 @@ const StyledHomepage = styled.div`
 
     @media only screen and (max-width: 600px) {
         .section-info {
-            left: 20%;
-            bottom: 50%;
+            width: 100%;
+            top: 70%;  
+            left: 50%; 
+            transform: translate(-50%, -50%);
             text-align: center;
+        }
+
+        .select-category {
+            font-size: 1.5rem;
+        }
+
+        .about-image {
+            font-size: 1rem;
+            width: 80%;
+            margin: 0 auto;
+            margin-top: 1rem;
         }
     }
 `;

@@ -2,7 +2,7 @@ import React from "react";
 import Logo from '../../assets/logo.png'
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { MdOutlineMenu } from "react-icons/md";
+import { MdOutlineMenu, MdClose } from "react-icons/md";
 import StyledHeader from "../Styled/Header.styled";
 import NavList from "../NavList/NavList.component";
 
@@ -24,8 +24,8 @@ const Header = (props) => {
                 </Link>
             </div>
 
-            <MdOutlineMenu className="mobile-menu icon" size='30' onClick={() => showMenu()}/> 
-            <NavList props={props} menu={menu}/>         
+            {menu ? <MdClose className="mobile-menu icon" size='30' onClick={() => showMenu()}/> : <MdOutlineMenu className="mobile-menu icon" size='30' onClick={() => showMenu()}/> }
+            <NavList props={props} menu={menu} />         
             
         </StyledHeader>
     )

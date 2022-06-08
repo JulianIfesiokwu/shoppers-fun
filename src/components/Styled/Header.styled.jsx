@@ -6,6 +6,7 @@ const StyledHeader = styled.div`
   justify-content: space-between;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid #ddd;
+  position: relative;
   .logo-container {
     padding-top: 0.25rem;
     width: 30px;
@@ -26,7 +27,7 @@ const StyledHeader = styled.div`
 
   @media only screen and (max-width: 600px) {
     .mobile-menu {
-      display: block;
+      display: flex;
     }
 
   }
