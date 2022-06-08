@@ -5,14 +5,13 @@ import { useState } from "react";
 import { MdFavorite, MdShoppingCart } from "react-icons/md";
 import StyledNavList from "../Styled/NavList.styled";
 
-const NavList = (props) => {
+const NavList = ({searchForItem, menu}) => {
     const [searchValue, setSearchValue] = useState('')
-    const {searchForItem, menu} = props
 
     return (
         <StyledNavList className={menu ? 'active' : ''}>
             <form className="search-container">                  
-                <input type="text" value={searchValue} onChange={(e) => setSearchValue(e.target.value)} className="search-box" placeholder="Search for anything..."/>
+                <input type="text" value={searchValue} onChange={(e) => searchForItem(e.target.value)} className="search-box" placeholder="Search for anything..."/>
                 <Link to={`/products`}>
                 <Button className="search-button" onClick={(e) => {searchForItem(e, searchValue)}}>GO!</Button>
             </Link>
