@@ -14,17 +14,19 @@ const StyledProductsPage = styled.section`
         margin-bottom: 2rem;
     }
 
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-        }
+    label {
+        margin-bottom: 0.5rem;
+        display: block;
 
-        input[type='radio'] {
-            margin-right: 0.5rem;
+        p {
+            display: inline;
+            margin-left: 0.5rem;    
         }
+    }
 
     .title {
-        margin-bottom: 1rem;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
         font-weight: 700;
     }
 
@@ -50,6 +52,21 @@ const StyledProductsPage = styled.section`
         a {
             display: flex;
             width: 18%;
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        flex-direction: column;
+
+            .products-container {
+                margin-top: 2rem;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 1%;
+            a {
+                display: flex;
+                width: 100%;
+            }
         }
     }
 `

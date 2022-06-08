@@ -11,7 +11,8 @@ const StyledProductCard = styled.article`
         cursor: pointer;
         box-shadow: 0px 2px 4px rgba(40, 41, 61, 0.04),
         0px 8px 16px rgba(96, 97, 112, 0.16);
-        transform: scale(1.01)
+        transform: scale(1.01);
+        border: none;
     }
 
     .img-container {

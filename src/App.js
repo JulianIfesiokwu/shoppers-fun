@@ -10,6 +10,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   const url = "https://fakestoreapi.com/products";
   const [products, setProducts] = useState([]);
+  const [filtered, setFiltered] = useState([]);
+  const [filterValue, setFilterValue] = useState("");
 
   const searchForItem = (e, value) => {
     // e.preventDefault();
@@ -30,29 +32,19 @@ function App() {
   };
 
   useEffect(() => {
-    const abortCont = new AbortController();
-
-    const fetchCategories = async () => {
-      try {
-        const response = await fetch(url, {
-          signal: abortCont.signal,
-        });
-        const data = await response.json();
-        setProducts(data);
-      } catch (err) {
-        // console.log(err);
-        if (err.name === "AbortError") {
-          // console.log("yes");
-        }
-      }
-    };
-
     fetchCategories();
-
-    return () => {
-      abortCont.abort();
-    };
   }, []);
+
+  const fetchCategories = async () => {
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      setProducts(data);
+      setFiltered(data);
+    } catch (err) {
+      // console.log(err);
+    }
+  };
 
   return (
     <BrowserRouter>
@@ -64,7 +56,15 @@ function App() {
           <Route index element={<HomePage />}></Route>
           <Route
             path="/products"
-            element={<ProductsPage products={products} />}
+            element={
+              <ProductsPage
+                products={products}
+                setFiltered={setFiltered}
+                filtered={filtered}
+                filterValue={filterValue}
+                setFilterValue={setFilterValue}
+              />
+            }
           ></Route>
           <Route
             path="/products/:productId"

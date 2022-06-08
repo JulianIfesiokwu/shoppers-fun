@@ -1,15 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom"
+import Button from "../../components/Styled/Button.styled";
 import ProductCard from "../../components/ProductCard/ProductCard.component"
 import StyledProductsPage from "../../components/Styled/ProductsPage.styled"
 import { MdStarRate } from "react-icons/md";
 
-const ProductsPage = (props) => {
-    const { products } = props
+const ProductsPage = ({ setFiltered, products, filtered, filterValue, setFilterValue }) => {
     // for star rating
     const possibleRating = [1, 2, 3, 4, 5]
     const [selectedRate, setSelectedRate] = useState(null)
     const [hoveredRate, setHoveredRate] = useState(null)
+
+    useEffect(() => {        
+        let filteredProducts = products.filter((product) => {
+            return product.price*600 < filterValue
+        })
+        console.log(filteredProducts)
+        
+        setFiltered(filteredProducts)
+
+    }, [products, setFiltered, filterValue])
 
     return (
         <StyledProductsPage>
@@ -17,64 +27,33 @@ const ProductsPage = (props) => {
                 <h2 className="search-title">Refine your Search</h2>
                     <div className="filter-form">
                         <p className="title">By price</p >
-                            <label htmlFor="10000">
-                                <input type="radio" value='10000' id='10000' name="price" />
-                                Less than 10 K
-                            </label>
-                            <label htmlFor="20000">
-                                <input type="radio" value='20000' id='20000' name="price" />
-                                Less than 20 K
-                            </label>
-                            <label htmlFor="30000">
-                                <input type="radio" value='30000' id='30000' name="price" />
-                                Less than 30 K
-                            </label>
-                            <label htmlFor="40000">
-                                <input type="radio" value='40000' id='40000' name="price" />
-                                Less than 40 K
-                            </label>
-                            <label htmlFor="50000">
-                                <input type="radio" value='50000' id='50000' name="price" />
-                                Less than 50 K
-                            </label>
-                            <label htmlFor="60000">
-                                <input type="radio" value='60000' id='60000' name="price" />
-                                Less than 60 K
-                            </label>
-                            <label htmlFor="70000">
-                                <input type="radio" value='70000' id='70000' name="price" />
-                                Less than 70 K
-                            </label>
-                            <label htmlFor="80000">
-                                <input type="radio" value='80000' id='80000' name="price" />
-                                Less than 80 K
-                            </label>
-                            <label htmlFor="90000">
-                                <input type="radio" value='90000' id='90000' name="price" />
-                                Less than 90 K
-                            </label>
-                            <label htmlFor="100000">
-                                <input type="radio" value='100000' id='100000' name="price" />
-                                More than 100 K
-                            </label>
+                        <select name="price" id="price" onChange={(e) => setFilterValue(e.target.value)}>
+                            <option value="10000">less than 10K</option>
+                            <option value="20000">less than 20K</option>
+                            <option value="40000">less than 40K</option>
+                            <option value="60000">less than 60K</option>
+                            <option value="80000">less than 80K</option>
+                            <option value="100000">less than 100K</option>
+                            <option value="all">all</option>
+                        </select>
                     </div>
                     <div>
                         <p className="title">By category</p>
                         <label htmlFor="men">
                             <input type="checkbox" id="men" value="men" />
-                            Men
+                            <p>Men</p>
                         </label>
                         <label htmlFor="women">
                             <input type="checkbox" id="women" value="women" />
-                            Women
+                            <p>Women</p>
                         </label>
                         <label htmlFor="jewellery">
                             <input type="checkbox" id="jewellery" value="jewellery" />
-                            Jewellery
+                            <p>Jewellery</p>
                         </label>
                         <label htmlFor="electronics">
                             <input type="checkbox" id="electronics" value="electronics" />
-                            Electronics
+                            <p>Electronics</p>
                         </label>
                     </div>
                     <div>
@@ -90,12 +69,14 @@ const ProductsPage = (props) => {
                             )
                         })}
                         <p>{selectedRate}</p>
-                    </div>                
+                    </div>
+                    <div className="clear-all">
+                        <Button>Clear all filters</Button></div>             
             </aside>
             <section className="product-list">
-                <h2 className="title">All products</h2>
+                <h2 className="search-title">All products</h2>
                 <article className="products-container">
-                    {products.map((product, index) => {
+                    {filtered.map((product, index) => {
                         const { id } = product
                         return (
                             <Link to={`/products/${id}`} key={index}>
