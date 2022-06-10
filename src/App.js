@@ -12,6 +12,8 @@ function App() {
   const [products, setProducts] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [filterValue, setFilterValue] = useState("");
+  const [categoryFilter, setCategoryFilter] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const searchForItem = (e, value) => {
     // e.preventDefault();
@@ -41,6 +43,7 @@ function App() {
       const data = await response.json();
       setProducts(data);
       setFiltered(data);
+      setLoading(false);
     } catch (err) {
       // console.log(err);
     }
@@ -63,6 +66,9 @@ function App() {
                 filtered={filtered}
                 filterValue={filterValue}
                 setFilterValue={setFilterValue}
+                loading={loading}
+                categoryFilter={categoryFilter}
+                setCategoryFilter={setCategoryFilter}
               />
             }
           ></Route>
