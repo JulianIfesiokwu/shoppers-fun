@@ -46,12 +46,12 @@ const StyledProductsPage = styled.section`
         margin-top: 2rem;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
         gap: 1%;
+        width: 100%;
 
         a {
             display: flex;
-            width: 18%;
+            width: 19%;
         }
     }
 
