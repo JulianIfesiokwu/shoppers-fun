@@ -14,13 +14,15 @@ function App() {
   const [filterValue, setFilterValue] = useState("");
   const [categoryFilter, setCategoryFilter] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [cart, setCart] = useState([]);
+  const [favourites, setFavourites] = useState([]);
 
   const searchForItem = (e, value) => {
     // e.preventDefault();
     console.log(products);
     if (!value) {
       // use a modal to ask for search parameter
-      console.log("nothing");
+      return;
     }
     if (value) {
       // search through products array and display product
@@ -49,6 +51,10 @@ function App() {
     }
   };
 
+  const addToFavourites = (product) => {
+    console.log(favourites, product);
+  };
+
   return (
     <BrowserRouter>
       <Routes>
@@ -69,6 +75,8 @@ function App() {
                 loading={loading}
                 categoryFilter={categoryFilter}
                 setCategoryFilter={setCategoryFilter}
+                setFavourites={setFavourites}
+                addToFavourites={addToFavourites}
               />
             }
           ></Route>

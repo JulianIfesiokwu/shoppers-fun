@@ -6,7 +6,7 @@ import StyledProductsPage from "../../components/Styled/ProductsPage.styled"
 import { MdStarRate } from "react-icons/md";
 import Loading from '../../assets/Loading.gif'
 
-const ProductsPage = ({ setFiltered, products, filtered, filterValue, setFilterValue, loading, categoryFilter, setCategoryFilter }) => {
+const ProductsPage = ({ setFiltered, products, filtered, filterValue, setFilterValue, loading, categoryFilter, setCategoryFilter, setFavourites, addToFavourites }) => {
     // for star rating
     const possibleRating = [1, 2, 3, 4, 5]
     const [selectedRate, setSelectedRate] = useState(null)
@@ -114,7 +114,7 @@ const ProductsPage = ({ setFiltered, products, filtered, filterValue, setFilterV
                         const { id } = product
                         return (
                             <Link to={`/products/${id}`} key={index}>
-                                <ProductCard {...product} />
+                                <ProductCard product={product} setFavourites={setFavourites} addToFavourites={addToFavourites} />
                             </Link>
                         )
                     })}                                    

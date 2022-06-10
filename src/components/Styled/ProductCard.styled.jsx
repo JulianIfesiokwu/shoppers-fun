@@ -13,6 +13,10 @@ const StyledProductCard = styled.article`
         0px 8px 16px rgba(96, 97, 112, 0.16);
         transform: scale(1.01);
         border: none;
+
+        .interactions {
+            display: flex;
+        }
     }
 
     .img-container {
@@ -27,6 +31,13 @@ const StyledProductCard = styled.article`
 
     .card-details {
         margin-top: auto;
+    }
+
+    .interactions {
+        display: none;
+        justify-content: space-between;
+        margin-top: 1rem;
+        z-index: 5;
     }
 `;
 

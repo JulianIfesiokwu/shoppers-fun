@@ -11,7 +11,7 @@ const NavList = ({searchForItem, menu}) => {
     return (
         <StyledNavList className={menu ? 'active' : ''}>
             <form className="search-container">                  
-                <input type="text" value={searchValue} onChange={(e) => searchForItem(e.target.value)} className="search-box" placeholder="Search for anything..."/>
+                <input type="text" value={searchValue} onChange={(e) => setSearchValue(e.target.value)} className="search-box" placeholder="Search for anything..."/>
                 <Link to={`/products`}>
                 <Button className="search-button" onClick={(e) => {searchForItem(e, searchValue)}}>GO!</Button>
             </Link>
