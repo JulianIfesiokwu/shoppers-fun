@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom"
+import { Link, useParams, useLocation } from "react-router-dom"
 import ProductCard from "../ProductCard/ProductCard.component";
 import DetailedProductComponent from "../Styled/DetailedProduct.styled"
 import { MdArrowBack, MdOutlineFavoriteBorder, MdOutlineAddShoppingCart } from "react-icons/md";
@@ -6,12 +6,14 @@ import CategoryList from "../CategoryList/CategoryList.component";
 import Button from "../Styled/Button.styled";
 
 const DetailedProduct = ({ products }) => {
-    const allProductsArray = Array.from(products)
+    const location = useLocation()
+    const { from } = location.state
 
-    // get product id
-    const { productId } = useParams()
+    const allProductsArray = Array.from(products)
+    console.log(from)
+
     // get product info
-    const product = allProductsArray.find((product) => product.id === parseInt(productId) )    
+    const product = allProductsArray.find((product) => product.id === from )    
     // get similar products
     const similarProducts = allProductsArray.filter((item) => item.category === product.category)
 

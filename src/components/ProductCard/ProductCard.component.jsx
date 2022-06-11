@@ -3,7 +3,6 @@ import { MdAddShoppingCart, MdAddCircleOutline } from "react-icons/md";
 
 const ProductCard = (props) => {
     const { title, image, rating } = props
-    console.log(props)
 
     return (
         <StyledProductCard >
@@ -15,7 +14,7 @@ const ProductCard = (props) => {
                 <p className="rating">{rating.rate}</p>
             </div>
             <div className="interactions">
-                <MdAddCircleOutline className='icon' size='30'  />
+                <MdAddCircleOutline alt='add to cart' className='icon' size='30'  onClick={() => console.log('yas')}/>
                 <MdAddShoppingCart className='icon' size='30' />
             </div>       
         </StyledProductCard>

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Button from "../Styled/Button.styled";
+import CartPage from "../../pages/Cart/CartPage.component";
 import { useState } from "react";
 import { MdFavorite, MdShoppingCart } from "react-icons/md";
 import StyledNavList from "../Styled/NavList.styled";
@@ -17,9 +18,10 @@ const NavList = ({searchForItem, menu}) => {
             </Link>
             </form>
             <li>Daily Deals</li>
-            <li><MdFavorite className="icon" size='20'/> Saved</li>
+            <li><MdFavorite className="icon" size='20'/> Favourites</li>
             <li>My Account</li>
-            <li><MdShoppingCart className="icon" size='20'/> Cart</li>
+            <li><Link to='/cart'><MdShoppingCart className="icon" size='20'/> Cart
+            </Link></li>
         </StyledNavList>
 
     )

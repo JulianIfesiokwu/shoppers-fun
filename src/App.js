@@ -5,6 +5,7 @@ import SharedLayout from "./components/SharedLayout/SharedLayout.component";
 import HomePage from "./pages/HomePage/HomePage.Page";
 import ErrorPage from "./pages/Error/ErrorPage.Page";
 import ProductsPage from "./pages/Products/Products.Page";
+import CartPage from "./pages/Cart/CartPage.component";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -77,12 +78,18 @@ function App() {
                 setCategoryFilter={setCategoryFilter}
                 setFavourites={setFavourites}
                 addToFavourites={addToFavourites}
+                cart={cart}
+                setCart={setCart}
               />
             }
           ></Route>
           <Route
             path="/products/:productId"
             element={<DetailedProduct products={products} />}
+          ></Route>
+          <Route
+            path="/cart"
+            element={<CartPage cart={cart} setCart={setCart} />}
           ></Route>
           <Route path="*" element={<ErrorPage />}></Route>
         </Route>
