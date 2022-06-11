@@ -91,8 +91,7 @@ const ProductsPage = ({ setFiltered, products, filtered, filterValue, setFilterV
                             return (
                             <MdStarRate key={rate} size='25' className={rate <= selectedRate ? 'star-rating fill' : 'star-rating not-fill'} 
                             onClick={() => {
-                                setSelectedRate(selectedRate)
-                                 console.log(rate)}}
+                                setSelectedRate(selectedRate)}}
                             onMouseEnter={() => setHoveredRate(hoveredRate)}
                             onMouseLeave={() => setHoveredRate(null)} />
                             )
@@ -111,10 +110,10 @@ const ProductsPage = ({ setFiltered, products, filtered, filterValue, setFilterV
                             <img src={Loading} alt='' />
                         </div>}
                     {filtered.map((product, index) => {
-                        const { id } = product
+                        const {id} = product
                         return (
-                            <Link to={`/products/${id}`} key={index}>
-                                <ProductCard product={product} setFavourites={setFavourites} addToFavourites={addToFavourites} />
+                            <Link to={`/products/${index}`} key={id}>
+                                <ProductCard {...product} setFavourites={setFavourites} addToFavourites={addToFavourites} />
                             </Link>
                         )
                     })}                                    

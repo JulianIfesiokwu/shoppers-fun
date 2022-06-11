@@ -5,8 +5,7 @@ import { MdArrowBack, MdOutlineFavoriteBorder, MdOutlineAddShoppingCart } from "
 import CategoryList from "../CategoryList/CategoryList.component";
 import Button from "../Styled/Button.styled";
 
-const DetailedProduct = (props) => {
-    const { products } = props
+const DetailedProduct = ({ products }) => {
     const allProductsArray = Array.from(products)
 
     // get product id
@@ -51,7 +50,7 @@ const DetailedProduct = (props) => {
                 <article className="interact">
                     <Button className="bigger-button"> Buy it now</Button>
                     <Button>< MdOutlineAddShoppingCart className="icon" size='15' /> Add to cart</Button>
-                    <Button><MdOutlineFavoriteBorder className="icon" size='15'/> Add to watchlist</Button>
+                    <Button><MdOutlineFavoriteBorder className="icon" size='15'/> Add to Favourites</Button>
                 </article>
                 </div>
             </div>

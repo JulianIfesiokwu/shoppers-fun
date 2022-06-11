@@ -1,8 +1,10 @@
 import StyledProductCard from "../Styled/ProductCard.styled"
 import { MdAddShoppingCart, MdAddCircleOutline } from "react-icons/md";
 
-const ProductCard = ({product, addToFavourites}) => {
-    const { title, image, rating } = product
+const ProductCard = (props) => {
+    const { title, image, rating } = props
+    console.log(props)
+
     return (
         <StyledProductCard >
             <div className="img-container">
@@ -13,7 +15,7 @@ const ProductCard = ({product, addToFavourites}) => {
                 <p className="rating">{rating.rate}</p>
             </div>
             <div className="interactions">
-                <MdAddCircleOutline className='icon' size='30' onClick={() => addToFavourites(product)} />
+                <MdAddCircleOutline className='icon' size='30'  />
                 <MdAddShoppingCart className='icon' size='30' />
             </div>       
         </StyledProductCard>

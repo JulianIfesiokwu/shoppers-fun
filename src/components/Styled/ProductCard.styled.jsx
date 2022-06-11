@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const StyledProductCard = styled.article`
-    padding: 0.75rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -21,6 +20,7 @@ const StyledProductCard = styled.article`
 
     .img-container {
         width: 100%;
+        padding: 0.75rem;
     }
 
     .img-container img {
@@ -31,13 +31,16 @@ const StyledProductCard = styled.article`
 
     .card-details {
         margin-top: auto;
+        padding: 0.75rem;
     }
 
     .interactions {
+        padding: 0.75rem;
         display: none;
         justify-content: space-between;
         margin-top: 1rem;
         z-index: 5;
+        background-color: #ddd;
     }
 `;
 
