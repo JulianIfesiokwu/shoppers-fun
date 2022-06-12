@@ -14,7 +14,10 @@ const NavList = ({searchForItem, menu}) => {
             <form className="search-container">                  
                 <input type="text" value={searchValue} onChange={(e) => setSearchValue(e.target.value)} className="search-box" placeholder="Search for anything..."/>
                 <Link to={`/products`}>
-                <Button className="search-button" onClick={(e) => {searchForItem(e, searchValue)}}>GO!</Button>
+                <Button className="search-button" onClick={(e) => {
+                    searchForItem(searchValue)
+                    setSearchValue('')
+                    }}>GO!</Button>
             </Link>
             </form>
             <li>Daily Deals</li>

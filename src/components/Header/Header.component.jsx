@@ -6,7 +6,7 @@ import { MdOutlineMenu, MdClose } from "react-icons/md";
 import StyledHeader from "../Styled/Header.styled";
 import NavList from "../NavList/NavList.component";
 
-const Header = (props) => {
+const Header = ({ searchForItem }) => {
     const [menu, setMenu] = useState(false)
 
     const showMenu = () => {
@@ -25,7 +25,7 @@ const Header = (props) => {
             </div>
 
             {menu ? <MdClose className="mobile-menu icon" size='30' onClick={() => showMenu()}/> : <MdOutlineMenu className="mobile-menu icon" size='30' onClick={() => showMenu()}/> }
-            <NavList props={props} menu={menu} />         
+            <NavList searchForItem={searchForItem} menu={menu} />         
             
         </StyledHeader>
     )
