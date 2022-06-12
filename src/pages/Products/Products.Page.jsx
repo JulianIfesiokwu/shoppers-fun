@@ -99,7 +99,7 @@ const ProductsPage = ({ setFiltered, products, filtered, filterValue, setFilterV
                         <p>{selectedRate}</p>
                     </div>
                     <div className="clear-all">
-                        <Button>Clear all filters</Button></div>             
+                        <Button onClick={() => setFiltered(products)}>Clear all filters</Button></div>             
             </aside>
             <section className="product-list">
                 <h2 className="search-title">All products</h2>

@@ -7,6 +7,7 @@ import ErrorPage from "./pages/Error/ErrorPage.Page";
 import ProductsPage from "./pages/Products/Products.Page";
 import CartPage from "./pages/Cart/CartPage.component";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop.component";
 
 function App() {
   const url = "https://fakestoreapi.com/products";
@@ -18,21 +19,20 @@ function App() {
   const [cart, setCart] = useState([]);
   const [favourites, setFavourites] = useState([]);
 
-  const searchForItem = (e, value) => {
-    // e.preventDefault();
-    console.log(products);
-    if (!value) {
-      // use a modal to ask for search parameter
-      return;
+  const searchForItem = (value) => {
+    console.log(value);
+    if (value === "") {
+      // display all products
     }
-    if (value) {
+    if (value !== "") {
       // search through products array and display product
       const possibleProducts = [];
-      const searchedProduct = products.filter((product) => {
+      const searchedProducts = products.filter((product) => {
         return product.title.toLowerCase().includes(value.toLowerCase());
       });
-      possibleProducts.push(searchedProduct);
-      console.log(possibleProducts);
+      possibleProducts.push(searchedProducts);
+      setFiltered(possibleProducts);
+      value = "";
     }
   };
 
@@ -58,6 +58,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route
           path="/"

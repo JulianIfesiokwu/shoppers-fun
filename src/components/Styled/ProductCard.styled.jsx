@@ -33,15 +33,6 @@ const StyledProductCard = styled.article`
         margin-top: auto;
         padding: 0.75rem;
     }
-
-    .interactions {
-        padding: 0.75rem;
-        display: none;
-        justify-content: space-between;
-        margin-top: 1rem;
-        z-index: 5;
-        background-color: #ddd;
-    }
 `;
 
 export default StyledProductCard

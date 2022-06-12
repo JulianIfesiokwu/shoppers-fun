@@ -1,5 +1,4 @@
 import StyledProductCard from "../Styled/ProductCard.styled"
-import { MdAddShoppingCart, MdAddCircleOutline } from "react-icons/md";
 
 const ProductCard = (props) => {
     const { title, image, rating } = props
@@ -12,11 +11,7 @@ const ProductCard = (props) => {
             <div className="card-details">
                 <p className="name">{title.length < 15 ? title : title.slice(0, 15).concat('...')}</p>
                 <p className="rating">{rating.rate}</p>
-            </div>
-            <div className="interactions">
-                <MdAddCircleOutline alt='add to cart' className='icon' size='30'  onClick={() => console.log('yas')}/>
-                <MdAddShoppingCart className='icon' size='30' />
-            </div>       
+            </div>   
         </StyledProductCard>
     )
 }
