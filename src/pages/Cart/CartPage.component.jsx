@@ -2,16 +2,15 @@ import React from "react";
 import { MdRemove, MdAdd } from "react-icons/md";
 import StyledCartPage from "../../components/Styled/Cart.Page.styled";
 
-const CartPage = ({ cart, setCart }) => {
+const CartPage = ({ cartItems, setCartItems, addToCart, removeFromCart }) => {
     return (
         <StyledCartPage>
-
-            {cart.length === 0 && 
+            {cartItems.length === 0 && 
                 <div className="empty-cart">
                     <h2>Sorry, your cart is empty.</h2>    
                 </div>
             }
-            {cart.length < 0 && 
+            {cartItems.length < 0 && 
             <table>
                 <tr className="cart-items">
                     <th>Item</th>
@@ -19,7 +18,7 @@ const CartPage = ({ cart, setCart }) => {
                     <th>Quantity</th>
                     <th>Price</th>
                 </tr>
-                {cart.map((product) => {
+                {cartItems.map((product) => {
                     const {title, image, price, id} = product
 
                     return (
@@ -31,9 +30,9 @@ const CartPage = ({ cart, setCart }) => {
                                 <p>{title}</p>
                             </td>
                             <td className="quantity">
-                                <span><MdRemove size='20' className="icon" /></span>
+                                <span onClick={() => removeFromCart(product)}><MdRemove size='20' className="icon" /></span>
                                 <input type='number' />
-                                <span><MdAdd size='20' className="icon" /></span>
+                                <span onClick={addToCart}><MdAdd size='20' className="icon" /></span>
                             </td>
                             <td className="price">&#8358;{price * 600}</td>
                         </tr>

@@ -5,15 +5,14 @@ import { MdArrowBack, MdOutlineFavoriteBorder, MdOutlineAddShoppingCart } from "
 import CategoryList from "../CategoryList/CategoryList.component";
 import Button from "../Styled/Button.styled";
 
-const DetailedProduct = ({ products }) => {
+const DetailedProduct = ({ products, addToCart, removeFromCart }) => {
     const location = useLocation()
     const { from } = location.state
 
     const allProductsArray = Array.from(products)
-    console.log(from)
 
     // get product info
-    const product = allProductsArray.find((product) => product.id === from )    
+    const product = allProductsArray.find((product) => product.id === from ) 
     // get similar products
     const similarProducts = allProductsArray.filter((item) => item.category === product.category)
 
@@ -51,8 +50,8 @@ const DetailedProduct = ({ products }) => {
                 </article>
                 <article className="interact">
                     <Button className="bigger-button"> Buy it now</Button>
-                    <Button>< MdOutlineAddShoppingCart className="icon" size='15' /> Add to cart</Button>
-                    <Button><MdOutlineFavoriteBorder className="icon" size='15'/> Add to Favourites</Button>
+                    <Button onClick={() => addToCart(product)}>< MdOutlineAddShoppingCart className="icon" size='15' /> Add to cart</Button>
+                    <Button onClick={() => removeFromCart(product)}><MdOutlineFavoriteBorder className="icon" size='15'/> Add to Favourites</Button>
                 </article>
                 </div>
             </div>

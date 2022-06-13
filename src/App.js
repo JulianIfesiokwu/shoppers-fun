@@ -16,11 +16,10 @@ function App() {
   const [filterValue, setFilterValue] = useState("");
   const [categoryFilter, setCategoryFilter] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [cart, setCart] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
   const [favourites, setFavourites] = useState([]);
 
   const searchForItem = (value) => {
-    console.log(value);
     if (value === "") {
       // display all products
     }
@@ -52,6 +51,34 @@ function App() {
     }
   };
 
+  const addToCart = (product) => {
+    const exist = cartItems.find((x) => x.id === product.id);
+    if (exist) {
+      setCartItems(
+        cartItems.map((x) =>
+          x.id === product.id ? { ...exist, qty: exist.qty + 1 } : x
+        )
+      );
+    } else {
+      setCartItems([...cartItems, { ...product, qty: 1 }]);
+    }
+    console.log(cartItems);
+  };
+
+  const removeFromCart = (product) => {
+    const exist = cartItems.find((x) => x.id === product.id);
+
+    if (exist.qty === 1) {
+      setCartItems(cartItems.filter((x) => x.id !== product.id));
+    } else {
+      setCartItems(
+        cartItems.map((x) =>
+          x.id === product.id ? { ...exist, qty: exist.qty - 1 } : x
+        )
+      );
+    }
+  };
+
   const addToFavourites = (product) => {
     console.log(favourites, product);
   };
@@ -79,19 +106,31 @@ function App() {
                 setCategoryFilter={setCategoryFilter}
                 setFavourites={setFavourites}
                 addToFavourites={addToFavourites}
-                cart={cart}
-                setCart={setCart}
+                cartItems={cartItems}
+                setCartItems={setCartItems}
               />
             }
           ></Route>
           <Route
             path="/products/:productId"
-            element={<DetailedProduct products={products} />}
+            element={
+              <DetailedProduct
+                products={products}
+                addToCart={addToCart}
+                removeFromCart={removeFromCart}
+              />
+            }
           ></Route>
           <Route
             path="/cart"
             element={
-              <CartPage cart={cart} setCart={setCart} filtered={filtered} />
+              <CartPage
+                cartItems={cartItems}
+                setCartItems={setCartItems}
+                filtered={filtered}
+                addToCart={addToCart}
+                removeFromCart={removeFromCart}
+              />
             }
           ></Route>
           <Route path="*" element={<ErrorPage />}></Route>
