@@ -90,7 +90,9 @@ function App() {
           ></Route>
           <Route
             path="/cart"
-            element={<CartPage cart={cart} setCart={setCart} />}
+            element={
+              <CartPage cart={cart} setCart={setCart} filtered={filtered} />
+            }
           ></Route>
           <Route path="*" element={<ErrorPage />}></Route>
         </Route>
