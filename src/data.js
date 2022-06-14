@@ -1,8 +1,8 @@
 export const carouselImages = [
   {
     id: 1,
-    category: "Sales",
-    url: "https://images.pexels.com/photos/2292953/pexels-photo-2292953.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    category: "Electronics",
+    url: "https://images.pexels.com/photos/325153/pexels-photo-325153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
   {
     id: 2,

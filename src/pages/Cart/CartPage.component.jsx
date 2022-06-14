@@ -1,8 +1,10 @@
 import React from "react";
+import { useEffect } from "react";
 import { MdRemove, MdAdd } from "react-icons/md";
 import StyledCartPage from "../../components/Styled/Cart.Page.styled";
 
 const CartPage = ({ cartItems, setCartItems, addToCart, removeFromCart }) => {
+
     return (
         <StyledCartPage>
             {cartItems.length === 0 && 

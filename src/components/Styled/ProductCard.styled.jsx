@@ -19,7 +19,8 @@ const StyledProductCard = styled.article`
     }
 
     .img-container {
-        width: 100%;
+        width: 80%;
+        margin: 0 auto;
         padding: 0.75rem;
     }
 
@@ -33,6 +34,13 @@ const StyledProductCard = styled.article`
         margin-top: auto;
         padding: 0.75rem;
     }
+
+    @media only screen and (max-width: 600px) {
+        .img-container {
+            margin-bottom: 1rem;
+        }
+    }
+
 `;
 
 export default StyledProductCard

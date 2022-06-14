@@ -9,7 +9,7 @@ const ProductCard = (props) => {
                 <img src={image} alt={title} />
             </div>
             <div className="card-details">
-                <p className="name">{title.length < 15 ? title : title.slice(0, 15).concat('...')}</p>
+                <p className="name">{title.length < 15 ? title : title.slice(0, 20).concat('...')}</p>
                 <p className="rating">{rating.rate}</p>
             </div>   
         </StyledProductCard>

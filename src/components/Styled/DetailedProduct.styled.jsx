@@ -56,6 +56,49 @@ const DetailedProductComponent = styled.section`
             width: 18%;
         }
     }
+    
+
+    @media only screen and (max-width: 600px) {
+        .product {
+            flex-direction: column;
+        }
+
+        .img-container {
+            margin-bottom: 1rem;
+        }
+
+        .title {
+            font-size: 1rem;
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .description {
+            width: 100%;
+            margin: 0.5rem 0;
+        }
+
+        .rating {
+            margin: 0.5rem 0;
+        }
+
+        Button {
+            width: 100%;
+            margin-right: 0;
+            margin-top: 1.5rem;
+        }
+
+        .similar-container {
+            flex-direction: column;
+
+            a {
+                width: 100%;
+            }
+        }
+    }
 
     `;
 

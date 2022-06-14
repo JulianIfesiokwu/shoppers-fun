@@ -28,15 +28,15 @@ const DetailedProduct = ({ products, addToCart, removeFromCart }) => {
                 <div className="product-details">
                 <article className="product-info">
                     <p className="title">{title}</p>
-                    <p className="price"> &#8358; {price * 600}</p>
+                    <p className="price"> &#8358; {(price * 600).toLocaleString('en-US')}</p>
                     <p className="description">{description}</p>
-                    <p className="category">{category}</p>
+                    <p className="category">Category: {category}</p>
                     <p className="rating">{rating.rate} from {rating.count}</p>
                 </article>
                 <article className="preferences">
                     <label htmlFor="quantity">
-                        qty:
-                        <input type="number" />
+                        Quantity: 
+                        <input type="number" className="quantity"/>
                     </label>
                     <label htmlFor="colour">
                         Colour:
