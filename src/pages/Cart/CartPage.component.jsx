@@ -1,5 +1,4 @@
 import React from "react";
-import { useEffect } from "react";
 import { MdRemove, MdAdd } from "react-icons/md";
 import StyledCartPage from "../../components/Styled/Cart.Page.styled";
 
@@ -12,7 +11,7 @@ const CartPage = ({ cartItems, setCartItems, addToCart, removeFromCart }) => {
                     <h2>Sorry, your cart is empty.</h2>    
                 </div>
             }
-            {cartItems.length < 0 && 
+            {cartItems.length > 0 && 
             <table>
                 <tr className="cart-items">
                     <th>Item</th>
@@ -33,7 +32,7 @@ const CartPage = ({ cartItems, setCartItems, addToCart, removeFromCart }) => {
                             </td>
                             <td className="quantity">
                                 <span onClick={() => removeFromCart(product)}><MdRemove size='20' className="icon" /></span>
-                                <input type='number' />
+                                <input type='number' value={product.quantity} />
                                 <span onClick={addToCart}><MdAdd size='20' className="icon" /></span>
                             </td>
                             <td className="price">&#8358;{price * 600}</td>
