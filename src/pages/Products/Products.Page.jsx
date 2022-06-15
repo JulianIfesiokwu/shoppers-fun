@@ -112,7 +112,7 @@ const ProductsPage = ({ setFiltered, products, filtered, filterValue, setFilterV
                     {filtered.map((product) => {
                         const {id} = product
                         return (
-                            <Link to={`/products/${id}`} key={id} state={{ from: id }}>
+                            <Link to={`/products/${id}`} key={id}>
                                 <ProductCard {...product} setFavourites={setFavourites} addToFavourites={addToFavourites} />
                             </Link>
                         )

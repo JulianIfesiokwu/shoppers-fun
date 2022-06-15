@@ -1,4 +1,4 @@
-import { Link, useParams, useLocation } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import ProductCard from "../ProductCard/ProductCard.component";
 import DetailedProductComponent from "../Styled/DetailedProduct.styled"
 import { MdArrowBack, MdOutlineFavoriteBorder, MdOutlineAddShoppingCart } from "react-icons/md";
@@ -6,16 +6,13 @@ import CategoryList from "../CategoryList/CategoryList.component";
 import Button from "../Styled/Button.styled";
 
 const DetailedProduct = ({ products, addToCart, removeFromCart }) => {
-    const location = useLocation()
-    const { from } = location.state
-
+    const { productId } = useParams()
     const allProductsArray = Array.from(products)
-
     // get product info
-    const product = allProductsArray.find((product) => product.id === from ) 
+    const product = allProductsArray.find((product) => product.id === parseInt(productId)) 
     // get similar products
     const similarProducts = allProductsArray.filter((item) => item.category === product.category)
-
+    // destructure products
     const { category, price, title, description, rating, image } = product
 
     return (
@@ -31,12 +28,12 @@ const DetailedProduct = ({ products, addToCart, removeFromCart }) => {
                     <p className="price"> &#8358; {(price * 600).toLocaleString('en-US')}</p>
                     <p className="description">{description}</p>
                     <p className="category">Category: {category}</p>
-                    <p className="rating">{rating.rate} from {rating.count}</p>
+                    <p className="rating">{rating.rate} from {rating.count} reviews</p>
                 </article>
                 <article className="preferences">
                     <label htmlFor="quantity">
                         Quantity: 
-                        <input type="number" className="quantity"/>
+                        <input type="number" className="quantity" min='1' maxLength='1' required/>
                     </label>
                     <label htmlFor="colour">
                         Colour:

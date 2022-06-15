@@ -35,10 +35,12 @@ const StyledProductCard = styled.article`
         padding: 0.75rem;
     }
 
+    .rating {
+        font-size: 0.8rem;
+    }
+
     @media only screen and (max-width: 600px) {
-        .img-container {
-            margin-bottom: 1rem;
-        }
+
     }
 
 `;

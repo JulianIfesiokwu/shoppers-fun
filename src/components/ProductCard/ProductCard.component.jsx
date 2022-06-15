@@ -10,7 +10,7 @@ const ProductCard = (props) => {
             </div>
             <div className="card-details">
                 <p className="name">{title.length < 15 ? title : title.slice(0, 20).concat('...')}</p>
-                <p className="rating">{rating.rate}</p>
+                <p className="rating">{rating.rate} from {rating.count} reviews</p>
             </div>   
         </StyledProductCard>
     )

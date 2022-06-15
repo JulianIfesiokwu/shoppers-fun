@@ -30,11 +30,40 @@ const DetailedProductComponent = styled.section`
     }
 
     .price {
-        font-size: 1.5rem;
+        font-size: 2rem;
+        font-weight: bold;
     }
 
     .description {
         width: 70%;
+    }
+
+    .category {
+        margin: 0.5rem 0;
+    }
+
+    .rating {
+        font-size: 0.8rem;
+        margin: 0.5rem 0;
+    }
+
+    label {
+        display: flex;
+        margin-bottom: 0.5rem;
+        width: 30%;
+        justify-content: space-between;
+    }
+
+    input {
+        width: 20%;
+        margin-left: 1rem;
+        padding: 0.5rem;
+    }
+
+    select {
+        width: 40%;
+        margin-left: 1rem;
+        padding: 0.5rem;
     }
 
     Button {
@@ -83,6 +112,10 @@ const DetailedProductComponent = styled.section`
 
         .rating {
             margin: 0.5rem 0;
+        }
+
+        label {
+            width: 50%;
         }
 
         Button {
