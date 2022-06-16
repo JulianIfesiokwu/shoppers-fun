@@ -4,10 +4,10 @@ import Footer from '../Footer/footer.component'
 import { Outlet } from "react-router-dom";
 
 const SharedLayout = (props) => {
-    const { categories, searchForItem } = props
+    const { categories, searchForItem, cartItems, favourites } = props
     return (
         <>
-            <Header categories={categories} searchForItem={searchForItem}/>
+            <Header categories={categories} searchForItem={searchForItem} cartItems={cartItems} favourites={favourites} />
             <Outlet />
             <Footer />
         </>

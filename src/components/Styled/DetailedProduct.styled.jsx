@@ -42,6 +42,10 @@ const DetailedProductComponent = styled.section`
         margin: 0.5rem 0;
     }
 
+    .quantity {
+        text-align: center;
+    }
+
     .rating {
         font-size: 0.8rem;
         margin: 0.5rem 0;

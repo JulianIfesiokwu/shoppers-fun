@@ -5,7 +5,7 @@ import { useState } from "react";
 import { MdFavorite, MdShoppingCart } from "react-icons/md";
 import StyledNavList from "../Styled/NavList.styled";
 
-const NavList = ({searchForItem, menu, cartItems}) => {
+const NavList = ({searchForItem, menu, cartItems, favourites}) => {
     const [searchValue, setSearchValue] = useState('')
 
     return (
@@ -19,8 +19,7 @@ const NavList = ({searchForItem, menu, cartItems}) => {
                     }}>GO!</Button>
             </Link>
             </form>
-            <li>Daily Deals</li>
-            <li><Link to='/Saved'><MdFavorite className="icon" size='15'/> Saved<span className="favourite-pill"></span></Link></li>
+            <li><Link to='/Saved' className="favourite-logo"><MdFavorite className="icon" size='15'/> Saved<span className="favourite-pill">{favourites.length > 0 ? favourites.length : ''}</span></Link></li>
             <li>My Account</li>
             <li className="cart-logo"><Link to='/cart'><MdShoppingCart className="icon" size='15'/> Cart<span className="cart-pill">{cartItems.length > 0 ? cartItems.length : ''}</span>
             </Link></li>

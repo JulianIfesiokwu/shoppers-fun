@@ -32,10 +32,10 @@ const CartPage = ({ cartItems, setCartItems, addToCart, removeFromCart }) => {
                             </td>
                             <td className="quantity">
                                 <span onClick={() => removeFromCart(product)}><MdRemove size='20' className="icon" /></span>
-                                <input type='number' value={product.quantity} />
-                                <span onClick={addToCart}><MdAdd size='20' className="icon" /></span>
+                                <input type='number' value={product.quantity} className='product-quantity' />
+                                <span onClick={() => addToCart(product)}><MdAdd size='20' className="icon" /></span>
                             </td>
-                            <td className="price">&#8358;{price * 600}</td>
+                            <td className="price">&#8358;{price * 600 * product.quantity}</td>
                         </tr>
                     )
                 })}

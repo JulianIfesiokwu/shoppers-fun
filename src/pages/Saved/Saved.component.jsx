@@ -2,7 +2,7 @@ import React from "react";
 import { MdRemove, MdAdd } from "react-icons/md";
 import StyledSavedPage from "../../components/Styled/SavedPage.styled";
 
-const SavedPage = ({ favourites }) => {
+const SavedPage = ({ favourites, addToCart, removeFromCart }) => {
 
     return (
         <StyledSavedPage>
@@ -16,7 +16,7 @@ const SavedPage = ({ favourites }) => {
                 <tr className="cart-items">
                     <th>Item</th>
                     <th>Name</th>
-                    <th>Quantity</th>
+                    <th>Include</th>
                     <th>Price</th>
                 </tr> 
                 {favourites.map((product) => {
@@ -30,12 +30,11 @@ const SavedPage = ({ favourites }) => {
                             <td className="details">
                                 <p>{title}</p>
                             </td>
-                            {/* <td className="quantity">
+                            <td className="quantity">
                                 <span onClick={() => removeFromCart(product)}><MdRemove size='20' className="icon" /></span>
-                                <input type='number' value={product.quantity} className='product-quantity' />
                                 <span onClick={() => addToCart(product)}><MdAdd size='20' className="icon" /></span>
                             </td>
-                            <td className="price">&#8358;{price * 600 * product.quantity}</td> */}
+                            <td className="price">&#8358;{price * 600}</td>
                         </tr>
                     )
                 })}

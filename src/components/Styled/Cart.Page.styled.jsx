@@ -41,6 +41,10 @@ const StyledCartPage = styled.section`
         }
     }
 
+    .product-quantity {
+        text-align: center;
+    }
+
 `;
 
 export default StyledCartPage

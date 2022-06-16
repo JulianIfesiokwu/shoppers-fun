@@ -41,7 +41,22 @@ const StyledNavList = styled.ul`
     position relative;
   }
 
+  .favourite-logo {
+    position relative;
+  }
+
   .cart-pill {
+    color: black;
+    border-radius: 10px;
+    width: 15px;
+    height: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    position: absolute;
+    bottom: 1.2rem;
+  }
+
+  .favourite-pill {
     color: black;
     border-radius: 10px;
     width: 15px;

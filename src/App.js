@@ -82,7 +82,13 @@ function App() {
   };
 
   const addToFavourites = (product) => {
-    console.log(favourites, product);
+    const exist = favourites.find((x) => x.id === product.id);
+
+    if (exist) {
+      return;
+    } else {
+      setFavourites([...favourites, product]);
+    }
   };
 
   return (
@@ -92,7 +98,11 @@ function App() {
         <Route
           path="/"
           element={
-            <SharedLayout searchForItem={searchForItem} cartItems={cartItems} />
+            <SharedLayout
+              searchForItem={searchForItem}
+              cartItems={cartItems}
+              favourites={favourites}
+            />
           }
         >
           <Route index element={<HomePage />}></Route>
@@ -108,8 +118,6 @@ function App() {
                 loading={loading}
                 categoryFilter={categoryFilter}
                 setCategoryFilter={setCategoryFilter}
-                setFavourites={setFavourites}
-                addToFavourites={addToFavourites}
                 cartItems={cartItems}
                 setCartItems={setCartItems}
               />
@@ -124,6 +132,7 @@ function App() {
                 removeFromCart={removeFromCart}
                 quantity={quantity}
                 setQuantity={setQuantity}
+                addToFavourites={addToFavourites}
               />
             }
           ></Route>
@@ -141,7 +150,16 @@ function App() {
               />
             }
           />
-          <Route path="saved" element={<SavedPage favourites={favourites} />} />
+          <Route
+            path="saved"
+            element={
+              <SavedPage
+                favourites={favourites}
+                addToCart={addToCart}
+                removeFromCart={removeFromCart}
+              />
+            }
+          />
           <Route path="*" element={<ErrorPage />}></Route>
         </Route>
       </Routes>

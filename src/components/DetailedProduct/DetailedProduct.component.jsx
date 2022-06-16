@@ -5,8 +5,9 @@ import { MdArrowBack, MdOutlineFavoriteBorder, MdOutlineAddShoppingCart } from "
 import CategoryList from "../CategoryList/CategoryList.component";
 import Button from "../Styled/Button.styled";
 
-const DetailedProduct = ({ products, addToCart, removeFromCart }) => {
-    const { productId } = useParams()
+const DetailedProduct = ({ products, addToCart, quantity, setQuantity, addToFavourites }) => {
+    const { productId } = useParams()    
+
     const allProductsArray = Array.from(products)
     // get product info
     const product = allProductsArray.find((product) => product.id === parseInt(productId)) 
@@ -33,7 +34,7 @@ const DetailedProduct = ({ products, addToCart, removeFromCart }) => {
                 <article className="preferences">
                     <label htmlFor="quantity">
                         Quantity: 
-                        <input type="number" className="quantity" min='1' maxLength='1' required/>
+                        <input type="number" placeholder='1' value={product.quantity} onChange={(e) => setQuantity(e.target.value)} className="quantity" min='1' max='99' maxLength='1' required/>
                     </label>
                     <label htmlFor="colour">
                         Colour:
@@ -48,7 +49,7 @@ const DetailedProduct = ({ products, addToCart, removeFromCart }) => {
                 <article className="interact">
                     <Button className="bigger-button"> Buy it now</Button>
                     <Button onClick={() => addToCart(product)}>< MdOutlineAddShoppingCart className="icon" size='15' /> Add to cart</Button>
-                    <Button onClick={() => removeFromCart(product)}><MdOutlineFavoriteBorder className="icon" size='15'/> Add to Favourites</Button>
+                    <Button onClick={() => addToFavourites(product)}><MdOutlineFavoriteBorder className="icon" size='15' /> Add to Favourites</Button>
                 </article>
                 </div>
             </div>
