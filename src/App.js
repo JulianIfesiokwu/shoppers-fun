@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage/HomePage.Page";
 import ErrorPage from "./pages/Error/ErrorPage.Page";
 import ProductsPage from "./pages/Products/Products.Page";
 import CartPage from "./pages/Cart/CartPage.component";
+import SavedPage from "./pages/Saved/Saved.component";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop.component";
 
@@ -18,6 +19,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [cartItems, setCartItems] = useState([]);
   const [favourites, setFavourites] = useState([]);
+  const [quantity, setQuantity] = useState(1);
 
   const searchForItem = (value) => {
     if (value === "") {
@@ -53,27 +55,27 @@ function App() {
 
   const addToCart = (product) => {
     const exist = cartItems.find((x) => x.id === product.id);
+    console.log(quantity);
     if (exist) {
       setCartItems(
         cartItems.map((x) =>
-          x.id === product.id ? { ...exist, qty: exist.qty + 1 } : x
+          x.id === product.id ? { ...exist, quantity: exist.quantity + 1 } : x
         )
       );
     } else {
-      setCartItems([...cartItems, { ...product, qty: 1 }]);
+      setCartItems([...cartItems, { ...product, quantity: quantity }]);
     }
-    console.log(cartItems);
   };
 
   const removeFromCart = (product) => {
     const exist = cartItems.find((x) => x.id === product.id);
 
-    if (exist.qty === 1) {
+    if (exist.quantity === 1) {
       setCartItems(cartItems.filter((x) => x.id !== product.id));
     } else {
       setCartItems(
         cartItems.map((x) =>
-          x.id === product.id ? { ...exist, qty: exist.qty - 1 } : x
+          x.id === product.id ? { ...exist, quantity: exist.quantity - 1 } : x
         )
       );
     }
@@ -89,11 +91,13 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<SharedLayout searchForItem={searchForItem} />}
+          element={
+            <SharedLayout searchForItem={searchForItem} cartItems={cartItems} />
+          }
         >
           <Route index element={<HomePage />}></Route>
           <Route
-            path="/products"
+            path="products"
             element={
               <ProductsPage
                 products={products}
@@ -112,17 +116,19 @@ function App() {
             }
           ></Route>
           <Route
-            path="/products/:productId"
+            path="products/:productId"
             element={
               <DetailedProduct
                 products={products}
                 addToCart={addToCart}
                 removeFromCart={removeFromCart}
+                quantity={quantity}
+                setQuantity={setQuantity}
               />
             }
           ></Route>
           <Route
-            path="/cart"
+            path="cart"
             element={
               <CartPage
                 cartItems={cartItems}
@@ -130,9 +136,12 @@ function App() {
                 filtered={filtered}
                 addToCart={addToCart}
                 removeFromCart={removeFromCart}
+                quantity={quantity}
+                setQuantity={setQuantity}
               />
             }
-          ></Route>
+          />
+          <Route path="saved" element={<SavedPage favourites={favourites} />} />
           <Route path="*" element={<ErrorPage />}></Route>
         </Route>
       </Routes>

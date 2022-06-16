@@ -1,12 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Button from "../Styled/Button.styled";
-import CartPage from "../../pages/Cart/CartPage.component";
 import { useState } from "react";
 import { MdFavorite, MdShoppingCart } from "react-icons/md";
 import StyledNavList from "../Styled/NavList.styled";
 
-const NavList = ({searchForItem, menu}) => {
+const NavList = ({searchForItem, menu, cartItems}) => {
     const [searchValue, setSearchValue] = useState('')
 
     return (
@@ -21,9 +20,9 @@ const NavList = ({searchForItem, menu}) => {
             </Link>
             </form>
             <li>Daily Deals</li>
-            <li><MdFavorite className="icon" size='20'/> Favourites</li>
+            <li><Link to='/Saved'><MdFavorite className="icon" size='15'/> Saved<span className="favourite-pill"></span></Link></li>
             <li>My Account</li>
-            <li><Link to='/cart'><MdShoppingCart className="icon" size='20'/> Cart
+            <li className="cart-logo"><Link to='/cart'><MdShoppingCart className="icon" size='15'/> Cart<span className="cart-pill">{cartItems.length > 0 ? cartItems.length : ''}</span>
             </Link></li>
         </StyledNavList>
 

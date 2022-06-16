@@ -9,6 +9,7 @@ const StyledNavList = styled.ul`
     margin-left: 1rem;
     display: inline;
     cursor: pointer;
+    font-size: 0.9rem;
   }
 
   .search-container {
@@ -34,6 +35,21 @@ const StyledNavList = styled.ul`
   .search-button:hover {
     color: white;
     background-color: black;
+  }
+
+  .cart-logo {
+    position relative;
+  }
+
+  .cart-pill {
+    color: black;
+    border-radius: 10px;
+    width: 15px;
+    height: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    position: absolute;
+    bottom: 1.2rem;
   }
 
   @media only screen and (max-width: 600px) {
