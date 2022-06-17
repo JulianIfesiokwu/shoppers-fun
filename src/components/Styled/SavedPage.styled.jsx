@@ -22,7 +22,7 @@ const StyledSavedPage = styled.div`
     }
 
     td {
-        heighT: 100px;
+        height: 100px;
         margin: 0.5rem;
         border-bottom: 1px solid #ddd;
     }
@@ -32,7 +32,14 @@ const StyledSavedPage = styled.div`
     }
 
     .details{
-        width: 50%;
+        width: 45%;
+    }
+
+    .quantity {
+        Button {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
     }
 
     .price {
@@ -40,10 +47,14 @@ const StyledSavedPage = styled.div`
         font-weight: bold;
     }
 
-    Button {
-        width: 100%;
-        margin-bottom: 1rem;
+    .clear-btn {
+        margin: 1rem auto;
     }
+
+    @media only screen and (max-width: 600px) {
+        
+    }
+
 `;
 
 export default StyledSavedPage

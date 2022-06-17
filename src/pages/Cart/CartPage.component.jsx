@@ -12,13 +12,16 @@ const CartPage = ({ cartItems, setCartItems, addToCart, removeFromCart }) => {
                 </div>
             }
             {cartItems.length > 0 && 
-            <table>
+            <table className="table">
+                <thead>
                 <tr className="cart-items">
                     <th>Item</th>
                     <th>Name</th>
                     <th>Quantity</th>
                     <th>Price</th>
                 </tr>
+                </thead>
+                <tbody>
                 {cartItems.map((product) => {
                     const {title, image, price, id} = product
 
@@ -35,10 +38,11 @@ const CartPage = ({ cartItems, setCartItems, addToCart, removeFromCart }) => {
                                 <input type='number' value={product.quantity} className='product-quantity' />
                                 <span onClick={() => addToCart(product)}><MdAdd size='20' className="icon" /></span>
                             </td>
-                            <td className="price">&#8358;{price * 600 * product.quantity}</td>
+                            <td className="price">&#8358; {(price * 600).toLocaleString('en-US')}</td>
                         </tr>
                     )
                 })}
+                </tbody>
             </table>
         }
         </StyledCartPage>

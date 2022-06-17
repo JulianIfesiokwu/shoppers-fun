@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../../components/Styled/Button.styled";
 import StyledSavedPage from "../../components/Styled/SavedPage.styled";
 
-const SavedPage = ({ favourites, addToCart, removeFromFavourites }) => {
+const SavedPage = ({ favourites, addToCart, removeFromFavourites, clearFavouritesList }) => {
 
     return (
         <StyledSavedPage>
@@ -12,6 +12,7 @@ const SavedPage = ({ favourites, addToCart, removeFromFavourites }) => {
                 </div>
             }
             {favourites.length > 0 && 
+            <>
             <table className="table">
                 <thead>
                     <tr className="cart-items">
@@ -46,6 +47,8 @@ const SavedPage = ({ favourites, addToCart, removeFromFavourites }) => {
                 })}
                 </tbody>
             </table>
+            <Button onClick={() => clearFavouritesList()} className='clear-btn' >Clear List</Button>
+            </>
         }
         </StyledSavedPage>
     )

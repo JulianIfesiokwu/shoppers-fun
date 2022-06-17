@@ -98,6 +98,10 @@ function App() {
     }
   };
 
+  const clearFavouritesList = () => {
+    setFavourites([]);
+  };
+
   return (
     <BrowserRouter>
       <ScrollToTop />
@@ -165,6 +169,7 @@ function App() {
                 addToCart={addToCart}
                 removeFromCart={removeFromCart}
                 removeFromFavourites={removeFromFavourites}
+                clearFavouritesList={clearFavouritesList}
               />
             }
           />

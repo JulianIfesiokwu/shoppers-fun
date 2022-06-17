@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const StyledCartPage = styled.section`
     padding: 2rem 0;
-    width: 70%;
+    width: 90%;
     margin: 0 auto;
 
     .empty-cart {
@@ -11,14 +11,20 @@ const StyledCartPage = styled.section`
         text-align: center;
     }
 
+    .table {
+        border-collapse: collapse;
+    }
+
     td, th {
-        padding: 0.5rem 0;
-        border-bottom: 1px solid #ddd;
+        padding: 0.5rem;
         margin-bottom: 1rem;
+        border-bottom: 1px solid #ddd;
     }
 
     td {
-        heighT: 100px;
+        height: 100px;
+        margin: 0.5rem;
+        border-bottom: 1px solid #ddd;
     }
 
     .img {
@@ -26,7 +32,7 @@ const StyledCartPage = styled.section`
     }
 
     .details{
-        width: 50%;
+        width: 45%;
     }
 
     .quantity, .price {
@@ -39,6 +45,11 @@ const StyledCartPage = styled.section`
             font-size: 1.25rem;
             margin: 0 1rem;
         }
+    }
+
+    .price {
+        font-size: 1.3rem;
+        font-weight: bold;
     }
 
     .product-quantity {
