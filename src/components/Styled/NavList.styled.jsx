@@ -50,10 +50,10 @@ const StyledNavList = styled.ul`
     border-radius: 10px;
     width: 15px;
     height: 15px;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     font-weight: 600;
     position: absolute;
-    bottom: 1.2rem;
+    bottom: 1.3rem;
   }
 
   .favourite-pill {
@@ -61,10 +61,10 @@ const StyledNavList = styled.ul`
     border-radius: 10px;
     width: 15px;
     height: 15px;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     font-weight: 600;
     position: absolute;
-    bottom: 1.2rem;
+    bottom: 0.7rem;
   }
 
   @media only screen and (max-width: 600px) {

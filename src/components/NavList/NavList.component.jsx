@@ -19,9 +19,9 @@ const NavList = ({searchForItem, menu, cartItems, favourites}) => {
                     }}>GO!</Button>
             </Link>
             </form>
-            <li><Link to='/Saved' className="favourite-logo"><MdFavorite className="icon" size='15'/> Saved<span className="favourite-pill">{favourites.length > 0 ? favourites.length : ''}</span></Link></li>
+            <li><Link to='/Saved' className="favourite-logo"><MdFavorite className="icon" size='15'/> Saved<span className="favourite-pill">{favourites.length > 0 ? favourites.length : 0}</span></Link></li>
             <li>My Account</li>
-            <li className="cart-logo"><Link to='/cart'><MdShoppingCart className="icon" size='15'/> Cart<span className="cart-pill">{cartItems.length > 0 ? cartItems.length : ''}</span>
+            <li className="cart-logo"><Link to='/cart'><MdShoppingCart className="icon" size='15'/> Cart<span className="cart-pill">{cartItems.length > 0 ? cartItems.length : 0}</span>
             </Link></li>
         </StyledNavList>
 
