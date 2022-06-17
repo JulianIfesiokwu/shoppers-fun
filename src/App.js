@@ -55,7 +55,6 @@ function App() {
 
   const addToCart = (product) => {
     const exist = cartItems.find((x) => x.id === product.id);
-    console.log(quantity);
     if (exist) {
       setCartItems(
         cartItems.map((x) =>
@@ -88,6 +87,14 @@ function App() {
       return;
     } else {
       setFavourites([...favourites, product]);
+    }
+  };
+
+  const removeFromFavourites = (product) => {
+    const exist = favourites.find((x) => x.id === product.id);
+
+    if (exist) {
+      setFavourites(favourites.filter((x) => x.id !== product.id));
     }
   };
 
@@ -157,6 +164,7 @@ function App() {
                 favourites={favourites}
                 addToCart={addToCart}
                 removeFromCart={removeFromCart}
+                removeFromFavourites={removeFromFavourites}
               />
             }
           />

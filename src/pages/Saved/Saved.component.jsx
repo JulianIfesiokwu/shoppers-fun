@@ -1,8 +1,8 @@
 import React from "react";
-import { MdRemove, MdAdd } from "react-icons/md";
+import Button from "../../components/Styled/Button.styled";
 import StyledSavedPage from "../../components/Styled/SavedPage.styled";
 
-const SavedPage = ({ favourites, addToCart, removeFromCart }) => {
+const SavedPage = ({ favourites, addToCart, removeFromFavourites }) => {
 
     return (
         <StyledSavedPage>
@@ -12,13 +12,16 @@ const SavedPage = ({ favourites, addToCart, removeFromCart }) => {
                 </div>
             }
             {favourites.length > 0 && 
-            <table>
-                <tr className="cart-items">
-                    <th>Item</th>
-                    <th>Name</th>
-                    <th>Include</th>
-                    <th>Price</th>
-                </tr> 
+            <table className="table">
+                <thead>
+                    <tr className="cart-items">
+                        <th>Item</th>
+                        <th>Name</th>
+                        <th>Include</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
                 {favourites.map((product) => {
                     const {title, image, price, id} = product
 
@@ -31,13 +34,17 @@ const SavedPage = ({ favourites, addToCart, removeFromCart }) => {
                                 <p>{title}</p>
                             </td>
                             <td className="quantity">
-                                <span onClick={() => removeFromCart(product)}><MdRemove size='20' className="icon" /></span>
-                                <span onClick={() => addToCart(product)}><MdAdd size='20' className="icon" /></span>
+                                <Button  onClick={() => removeFromFavourites(product)}><span>Remove from favourites</span></Button>
+                                <Button onClick={() => {
+                                    addToCart(product)
+                                removeFromFavourites(product)}
+                                }><span>Add to cart</span></Button>
                             </td>
-                            <td className="price">&#8358;{price * 600}</td>
+                            <td className="price">&#8358; {(price * 600).toLocaleString('en-US')}</td>
                         </tr>
                     )
                 })}
+                </tbody>
             </table>
         }
         </StyledSavedPage>

@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 const StyledSavedPage = styled.div`
-        padding: 2rem 0;
-    width: 70%;
+    padding: 2rem 0;
+    width: 95%;
     margin: 0 auto;
 
     .empty-cart {
@@ -11,14 +11,20 @@ const StyledSavedPage = styled.div`
         text-align: center;
     }
 
+    .table {
+        border-collapse: collapse;
+    }
+
     td, th {
-        padding: 0.5rem 0;
-        border-bottom: 1px solid #ddd;
+        padding: 0.5rem;
         margin-bottom: 1rem;
+        border-bottom: 1px solid #ddd;
     }
 
     td {
         heighT: 100px;
+        margin: 0.5rem;
+        border-bottom: 1px solid #ddd;
     }
 
     .img {
@@ -27,6 +33,16 @@ const StyledSavedPage = styled.div`
 
     .details{
         width: 50%;
+    }
+
+    .price {
+        font-size: 1.3rem;
+        font-weight: bold;
+    }
+
+    Button {
+        width: 100%;
+        margin-bottom: 1rem;
     }
 `;
 
