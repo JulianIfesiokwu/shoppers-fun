@@ -24,7 +24,6 @@ const StyledCartPage = styled.section`
     td {
         height: 100px;
         margin: 0.5rem;
-        border-bottom: 1px solid #ddd;
     }
 
     .img {
@@ -38,24 +37,38 @@ const StyledCartPage = styled.section`
     .quantity, .price {
         width: 20%;
         text-align: center;
-
-        input {
-            width: 20%;
-            border: 1px solid #ddd;
-            font-size: 1.25rem;
-            margin: 0 1rem;
-        }
     }
 
-    .price {
+    .price, .total-amount {
         font-size: 1.3rem;
         font-weight: bold;
+        text-align: center;
     }
 
     .product-quantity {
         text-align: center;
+        width: 20%;
+        border: 1px solid #ddd;
+        font-size: 1.25rem;
+        margin: 0 1rem;
     }
 
+    .pay-btn {
+        width: 100%;
+    }
+
+    @media only screen and (max-width: 600px) {
+        width: 100%;
+
+        .minus, .add {
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .product-quantity, .minus {
+            margin-bottom: 1rem;
+        }
+    }
 `;
 
 export default StyledCartPage

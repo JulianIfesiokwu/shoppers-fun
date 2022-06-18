@@ -1,8 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { MdRemove, MdAdd } from "react-icons/md";
+import Button from "../../components/Styled/Button.styled";
 import StyledCartPage from "../../components/Styled/Cart.Page.styled";
 
 const CartPage = ({ cartItems, setCartItems, addToCart, removeFromCart }) => {
+
+    const getPrices = cartItems.map((cartItem) => cartItem.price * 600 *cartItem.quantity)
+
+    const totalAmount = getPrices.reduce((accumulator, currentValue) => {
+        return accumulator + currentValue        
+    }, 0)
 
     return (
         <StyledCartPage>
@@ -18,7 +26,7 @@ const CartPage = ({ cartItems, setCartItems, addToCart, removeFromCart }) => {
                     <th>Item</th>
                     <th>Name</th>
                     <th>Quantity</th>
-                    <th>Price</th>
+                    <th>Price (&#8358;)</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -34,15 +42,23 @@ const CartPage = ({ cartItems, setCartItems, addToCart, removeFromCart }) => {
                                 <p>{title}</p>
                             </td>
                             <td className="quantity">
-                                <span onClick={() => removeFromCart(product)}><MdRemove size='20' className="icon" /></span>
-                                <input type='number' value={product.quantity} className='product-quantity' />
-                                <span onClick={() => addToCart(product)}><MdAdd size='20' className="icon" /></span>
+                                <span className='minus' onClick={() => removeFromCart(product)}><MdRemove size='20' className="icon" /></span>
+                                <input type='number' value={product.quantity} onChange={(value) => value = product.quantity}className='product-quantity' />
+                                <span className='add' onClick={() => addToCart(product)}><MdAdd size='20' className="icon" /></span>
                             </td>
-                            <td className="price">&#8358; {(price * 600).toLocaleString('en-US')}</td>
+                            <td className="price"> {(price * 600 * product.quantity).toLocaleString('en-US')}</td>
                         </tr>
                     )
                 })}
                 </tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td>Total payable: </td>
+                        <td><Link to='/payment'><Button className="pay-btn">pay due</Button></Link></td>
+                        <td className="total-amount">{totalAmount.toLocaleString('en-US')}</td>
+                    </tr>
+                </tfoot>
             </table>
         }
         </StyledCartPage>

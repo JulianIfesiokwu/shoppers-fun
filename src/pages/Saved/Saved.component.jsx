@@ -19,7 +19,7 @@ const SavedPage = ({ favourites, addToCart, removeFromFavourites, clearFavourite
                         <th>Item</th>
                         <th>Name</th>
                         <th>Include</th>
-                        <th>Price</th>
+                        <th>Price (&#8358;)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,7 +41,7 @@ const SavedPage = ({ favourites, addToCart, removeFromFavourites, clearFavourite
                                 removeFromFavourites(product)}
                                 }><span>Add to cart</span></Button>
                             </td>
-                            <td className="price">&#8358; {(price * 600).toLocaleString('en-US')}</td>
+                            <td className="price"> {(price * 600).toLocaleString('en-US')}</td>
                         </tr>
                     )
                 })}
