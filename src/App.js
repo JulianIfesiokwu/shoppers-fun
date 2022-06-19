@@ -8,6 +8,7 @@ import ProductsPage from "./pages/Products/Products.Page";
 import CartPage from "./pages/Cart/CartPage.component";
 import SavedPage from "./pages/Saved/Saved.component";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import CheckOutPage from "./pages/Checkout/CheckoutPage.component";
 import ScrollToTop from "./components/ScrollToTop.component";
 
 function App() {
@@ -172,6 +173,10 @@ function App() {
                 clearFavouritesList={clearFavouritesList}
               />
             }
+          />
+          <Route
+            path="/checkout"
+            element={<CheckOutPage cartItems={cartItems} />}
           />
           <Route path="*" element={<ErrorPage />}></Route>
         </Route>

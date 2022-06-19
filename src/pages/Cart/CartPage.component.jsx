@@ -55,7 +55,7 @@ const CartPage = ({ cartItems, setCartItems, addToCart, removeFromCart }) => {
                     <tr>
                         <td></td>
                         <td>Total payable: </td>
-                        <td><Link to='/payment'><Button className="pay-btn">pay due</Button></Link></td>
+                        <td><Link to='/checkout'><Button className="pay-btn">go to checkout</Button></Link></td>
                         <td className="total-amount">{totalAmount.toLocaleString('en-US')}</td>
                     </tr>
                 </tfoot>
