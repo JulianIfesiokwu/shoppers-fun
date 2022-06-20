@@ -62,6 +62,37 @@ const StyledCheckoutPage = styled.div`
         border-top: 1px solid #ddd;
         padding-top: 0.5rem;
     }
+
+    .disabled {
+        pointer-events: none;
+        background-color: #ddd;
+        padding: 0.5rem;
+    }
+
+    .contact-details, .shipping-info {
+        background-color: white;
+        pointer-events: auto;
+        padding: 0.5rem;
+    }
+
+    .delivery-info {
+        color: red;
+        margin: 0.5rem 0;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .payment-form {
+            flex-direction: column;
+        }
+
+        .personal-info, .sub-total {
+            width: 100%;
+        }
+
+        .card-input, .address-input {
+            width: 100%;
+        }
+    }
 `
 
 export default StyledCheckoutPage;

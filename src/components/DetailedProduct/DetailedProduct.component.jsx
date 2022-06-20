@@ -47,7 +47,7 @@ const DetailedProduct = ({ products, addToCart, quantity, setQuantity, addToFavo
                     </label>
                 </article>
                 <article className="interact">
-                    <Button className="bigger-button"> Buy it now</Button>
+                    <Link to='/checkout'><Button className="bigger-button"> Buy it now</Button></Link>
                     <Button onClick={() => addToCart(product)}>< MdOutlineAddShoppingCart className="icon" size='15' /> Add to cart</Button>
                     <Button onClick={() => addToFavourites(product)}><MdOutlineFavoriteBorder className="icon" size='15' /> Add to Favourites</Button>
                 </article>
