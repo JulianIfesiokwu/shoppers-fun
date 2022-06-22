@@ -33,11 +33,17 @@ const StyledCheckoutPage = styled.div`
         margin-bottom: 0.5rem;
     }
 
-    .card-input, .address-input {
+    .card-input {
         padding: 0.5rem;
         width: 48.75%;
         margin-right: 0.5rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    .address-input {
+        padding: 0.5rem;
+        width: 98.5%;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
     }
 
     .sub-total {
@@ -78,6 +84,27 @@ const StyledCheckoutPage = styled.div`
     .delivery-info {
         color: red;
         margin: 0.5rem 0;
+        font-size: 0.8rem;
+    }
+
+    .error-message {
+        font-size: 0.7rem;
+        color: red;
+        margin-bottom: 1rem;
+    }
+
+    #address {
+        width: 98.5%;
+    }
+
+    .total-quantity {
+        font-weight: 700;
+        font-size: 1.4rem;
+    }
+
+    .shipping-details {
+        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
     }
 
     @media only screen and (max-width: 600px) {
