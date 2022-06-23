@@ -1,12 +1,12 @@
 import { useState } from "react"
 import { useForm } from 'react-hook-form'
+import { Link } from 'react-router-dom'
 import Modal from 'react-modal';
-import { MdClose } from "react-icons/md";
 import Button from "../../components/Styled/Button.styled"
 import StyledCheckoutPage from "../../components/Styled/CheckoutPage.styles"
 
 Modal.setAppElement('#root')
-const CheckOutPage = ({cartItems}) => {
+const CheckOutPage = ({cartItems, setCartItems}) => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     
     const [delivery, setDelivery] = useState(false)
@@ -33,7 +33,6 @@ const CheckOutPage = ({cartItems}) => {
         //     return
         // }
         setModalIsOpen(true)
-        console.log(data)
     }
     // watch for shipping address to be shown in modal
     const address = watch('address')
@@ -132,35 +131,56 @@ const CheckOutPage = ({cartItems}) => {
                 <Button>confirm & pay</Button>
             </div>
          </form>
-         <Modal isOpen={modalIsOpen}onRequestClose={() => setModalIsOpen(false)} style={{
+         <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)} style={{
+            overlay: {
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                backgroundColor: 'rgba(0,0,0,0.5)'
+                },
             content: {
                 position: 'absolute',
-                top: '3rem',
-                left: '40px',
-                right: '40px',
-                bottom: '40px',
+                top: '5rem',
+                left: '2rem',
+                right: '2rem',
+                bottom: '10rem',
                 border: '1px solid #ccc',
                 background: '#fff',
                 overflow: 'auto',
                 WebkitOverflowScrolling: 'touch',
-                borderRadius: '4px',
+                borderRadius: '0',
                 outline: 'none',
-                padding: '20px'
+                padding: '1rem',
+                textAlign: 'center'
                 }
          }}>
-            <div className="modal-header">
-                <p>shoppers-fun</p>
-                <MdClose onClick={() => setModalIsOpen(false)} />
+            <div className="modal-content">
+                <p className="shipping-details" style={{
+                    fontWeight: '700',
+                    marginBottom: '0.5rem'
+                }}>Your items have been shipped to:</p>
+                <p className="shipping-details" style={{
+                    marginBottom: '0.5rem'
+                }}>{address}</p>
+                <p className="shipping-details" style={{
+                    marginBottom: '0.5rem'
+                }}>{state}</p>
+                <p className="shipping-details" style={{
+                    marginBottom: '0.5rem'
+                }}>{country}</p>
+                <p className="shipping-details" style={{
+                    marginBottom: '0.5rem'
+                }}>{phone}</p>
+                <p className="shipping-details" style={{
+                    marginBottom: '0.5rem'
+                }}>{email}</p>
+                <Link to='/'>
+                    <Button 
+                    onClick={() => setCartItems([])}>back to home</Button>
+                </Link>
             </div>
-            <div className="modal-body">
-                <p className="shipping-details">Your items have been shipped to:</p>
-                <p className="shipping-details">{address}</p>
-                <p className="shipping-details">{state}</p>
-                <p className="shipping-details">{country}</p>
-                <p className="shipping-details">{phone}</p>
-                <p className="shipping-details">{email}</p>
-            </div>
-            <Button onClick={() => setModalIsOpen(false)}>close modal</Button>
         </Modal>
         </StyledCheckoutPage>
     )

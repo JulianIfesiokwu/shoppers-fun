@@ -176,7 +176,9 @@ function App() {
           />
           <Route
             path="/checkout"
-            element={<CheckOutPage cartItems={cartItems} />}
+            element={
+              <CheckOutPage cartItems={cartItems} setCartItems={setCartItems} />
+            }
           />
           <Route path="*" element={<ErrorPage />}></Route>
         </Route>

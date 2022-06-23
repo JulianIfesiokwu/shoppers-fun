@@ -106,7 +106,7 @@ const StyledCheckoutPage = styled.div`
         margin-bottom: 0.5rem;
         font-size: 1.2rem;
     }
-
+    
     @media only screen and (max-width: 600px) {
         .payment-form {
             flex-direction: column;
