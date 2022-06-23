@@ -69,3 +69,10 @@ img {
   width: 100%;
   height: auto;
 }
+
+:root {
+  --primary-color: #4169E1;
+  --secondary-color: #D62C49; /* cta */
+  --neutral-color: #AAAABC;
+}
+
