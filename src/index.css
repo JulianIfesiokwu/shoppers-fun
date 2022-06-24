@@ -35,7 +35,7 @@ img {
 
 a {
   text-decoration: none;
-  color: black;
+  color: var(--primary-color);
 }
 
 /* all icons */
@@ -75,4 +75,5 @@ img {
   --secondary-color: #D62C49; /* cta */
   --neutral-color: #AAAABC;
 }
+
 

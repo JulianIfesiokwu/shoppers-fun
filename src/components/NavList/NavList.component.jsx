@@ -5,7 +5,7 @@ import { useState } from "react";
 import { MdFavorite, MdShoppingCart } from "react-icons/md";
 import StyledNavList from "../Styled/NavList.styled";
 
-const NavList = ({searchForItem, menu, cartItems, favourites}) => {
+const NavList = ({searchForItem, menu, showMenu, cartItems, favourites}) => {
     const [searchValue, setSearchValue] = useState('')
 
     return (
@@ -19,9 +19,9 @@ const NavList = ({searchForItem, menu, cartItems, favourites}) => {
                     }}>GO!</Button>
             </Link>
             </form>
-            <li><Link to='/Saved' className="favourite-logo"><MdFavorite className="icon" size='15'/> Saved<span className="favourite-pill">{favourites.length > 0 ? favourites.length : 0}</span></Link></li>
-            <li>My Account</li>
-            <li className="cart-logo"><Link to='/cart'><MdShoppingCart className="icon" size='15'/> Cart<span className="cart-pill">{cartItems.length > 0 ? cartItems.length : 0}</span>
+            <li onClick={() => showMenu()}><Link to='/Saved' className="favourite-logo"><MdFavorite className="icon" size='15'/> Saved<span className="favourite-pill">{favourites.length > 0 ? favourites.length : 0}</span></Link></li>
+            <li onClick={() => showMenu()}>My Account</li>
+            <li className="cart-logo" onClick={() => showMenu()}><Link to='/cart'><MdShoppingCart className="icon" size='15'/> Cart<span className="cart-pill">{cartItems.length > 0 ? cartItems.length : 0}</span>
             </Link></li>
         </StyledNavList>
 

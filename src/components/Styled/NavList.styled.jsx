@@ -10,12 +10,14 @@ const StyledNavList = styled.ul`
     display: inline;
     cursor: pointer;
     font-size: 0.9rem;
+    color: var(--primary-color);
+    font-weight: 600;
   }
 
   .search-container {
-    display: inline-flex;
+    display: flex;
     justify-content: space-between;
-    border: 2px solid #222;
+    border: 1px solid var(--secondary-color);
   }
 
   .search-box {
@@ -26,15 +28,16 @@ const StyledNavList = styled.ul`
   }
 
   .search-button {
-    color: black;
-    background-color: white;
+    height: 100%;
+    color: white;
+    background-color: var(--secondary-color);
     border: none;
     margin: 0 auto;
   }
 
   .search-button:hover {
-    color: white;
-    background-color: black;
+    color: var(--secondary-color);
+    background-color: white;
   }
 
   .cart-logo {
@@ -46,7 +49,7 @@ const StyledNavList = styled.ul`
   }
 
   .cart-pill {
-    color: black;
+    color: var(--secondary-color);
     border-radius: 10px;
     width: 15px;
     height: 15px;
@@ -57,7 +60,7 @@ const StyledNavList = styled.ul`
   }
 
   .favourite-pill {
-    color: black;
+    color: var(--secondary-color);
     border-radius: 10px;
     width: 15px;
     height: 15px;
@@ -73,7 +76,8 @@ const StyledNavList = styled.ul`
     position: absolute;
     background-color: white;
     z-index: 10;
-    padding: 1rem 0;
+    padding: 0;
+    border: 1px solid var(--secondary-color);
 
     &.active {
       display: flex;
@@ -84,12 +88,14 @@ const StyledNavList = styled.ul`
 
     li {
       margin-left: 0;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1.2rem;
+      padding: 0 0.5rem;
     }
 
     .search-container {
       border: none;
-      border-bottom: 2px solid black;
+      border-bottom: 2px solid var(--secondary-color);
+      margin-bottom: 1.2rem;
     }
   }
 
