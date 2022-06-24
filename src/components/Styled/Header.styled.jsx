@@ -21,6 +21,8 @@ const StyledHeader = styled.div`
   .company-name {
     display: inline;
     font-family: "Just Another Hand", cursive;
+    color: var(--primary-color);
+    font-weight: 500;
     letter-spacing: 2px;
     font-size: 1.3rem;
   }
@@ -28,6 +30,7 @@ const StyledHeader = styled.div`
   @media only screen and (max-width: 600px) {
     .mobile-menu {
       display: flex;
+      color: var(--primary-color);
     }
 
   }

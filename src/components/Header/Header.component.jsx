@@ -25,7 +25,7 @@ const Header = ({ searchForItem, cartItems, favourites }) => {
             </div>
 
             {menu ? <MdClose className="mobile-menu icon" size='30' onClick={() => showMenu()}/> : <MdOutlineMenu className="mobile-menu icon" size='30' onClick={() => showMenu()}/> }
-            <NavList searchForItem={searchForItem} menu={menu} cartItems={cartItems} favourites={favourites} />         
+            <NavList searchForItem={searchForItem} menu={menu} showMenu={showMenu} cartItems={cartItems} favourites={favourites} />         
             
         </StyledHeader>
     )
