@@ -7,7 +7,7 @@ import Button from '../../components/Styled/Button.styled'
 import StyledHomepage from "../../components/Styled/HomePage.styled";
 
 
-const HomePage = () => {
+const HomePage = ({setCategoryFilter}) => {
     const [ current, setCurrent ] = useState(0)
 
     useEffect(() => {
@@ -39,7 +39,7 @@ const HomePage = () => {
                                 </div>
                                 <div className="section-info">
                                     <Link to={`/products`}>
-                                        <Button className="select-category">{category.toUpperCase()}<MdArrowForward className="icon"/></Button>
+                                        <Button className="select-category" onClick={() => setCategoryFilter(category)}>{category.toUpperCase()}<MdArrowForward className="icon"/></Button>
                                     </Link>
                                     <p className="about-image">Discover a world of affordable clothing, shop by category, seasons or check out our deals on offer.</p>
                                 </div>

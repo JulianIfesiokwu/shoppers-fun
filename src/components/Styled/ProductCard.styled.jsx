@@ -5,6 +5,7 @@ const StyledProductCard = styled.article`
     flex-direction: column;
     justify-content: space-around;
     border: 1px solid #ddd;
+    background-color: #FFF;
     margin-bottom: 1rem;
     : hover {
         cursor: pointer;
@@ -33,6 +34,11 @@ const StyledProductCard = styled.article`
     .card-details {
         margin-top: auto;
         padding: 0.75rem;
+    }
+
+    .name {
+        color: var(--primary-color);
+        font-weight: 700;
     }
 
     .rating {

@@ -11,6 +11,7 @@ const StyledProductsPage = styled.section`
     }
 
     .search-title {
+        color: var(--primary-color);
         margin-bottom: 2rem;
     }
 

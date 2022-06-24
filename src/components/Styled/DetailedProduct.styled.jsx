@@ -14,6 +14,8 @@ const DetailedProductComponent = styled.section`
     .img-container {
         display: inline-block;
         width: 40%;
+        background-color: white;
+        height: 100%;
     }
     
     .img {
@@ -32,6 +34,7 @@ const DetailedProductComponent = styled.section`
     .price {
         font-size: 2rem;
         font-weight: bold;
+        color: var(--primary-color);
     }
 
     .description {

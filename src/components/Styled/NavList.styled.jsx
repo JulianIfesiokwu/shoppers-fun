@@ -94,9 +94,20 @@ const StyledNavList = styled.ul`
 
     .search-container {
       border: none;
-      border-bottom: 2px solid var(--secondary-color);
+      border-bottom: 1px solid var(--secondary-color);
       margin-bottom: 1.2rem;
     }
+
+    .cart-pill {
+    color: var(--secondary-color);
+    border-radius: 10px;
+    width: 15px;
+    height: 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    position: absolute;
+    bottom: 0.7rem;
+  }
   }
 
 `;

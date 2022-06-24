@@ -117,7 +117,10 @@ function App() {
             />
           }
         >
-          <Route index element={<HomePage />}></Route>
+          <Route
+            index
+            element={<HomePage setCategoryFilter={setCategoryFilter} />}
+          ></Route>
           <Route
             path="products"
             element={

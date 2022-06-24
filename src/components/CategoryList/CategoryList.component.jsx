@@ -12,7 +12,7 @@ const CategoryList = () => {
     return (
         <StyledCategoryList>
             <div className="title-section">
-                <h2>Explore Popular Catgeories</h2>
+                <h2>Explore Popular Categories</h2>
                 <Link to='/products'><Button>See all <MdArrowForward className="icon" size='25'/></Button></Link>
             </div>
             <div className="all-categories">

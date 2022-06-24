@@ -74,14 +74,14 @@ const StyledHomepage = styled.div`
     .select-category {
         background-color: transparent;
         color: white;
-        border: 2px solid white;
+        border: 1px solid white;
         text-align: center;
         font-size: 2rem;
 
         :hover {
             color: white;
-            background-color: black;
-            border: 2px solid black;
+            background-color: var(--secondary-color);
+            border: 1px solid var(--secondary-color);
         }
     }
 
