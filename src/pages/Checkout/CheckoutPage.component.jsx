@@ -96,7 +96,7 @@ const CheckOutPage = ({cartItems, setCartItems}) => {
                     <p className="delivery-info">Please ensure you have the total amount on hand i.e. the order total as described on the right of your screen when the items arrive.</p>
                 </div>}
                 <div className="shipping-details">
-                    <h3 className="address-title">Shipping Address</h3>
+                    <h3 className="address-title">Delivery Address</h3>
                     <div className="shipping-info">
                         <input {...register('address', {required: `Please fill an address for delivery.`})} type="text" placeholder="address" className="address-input" id="address"/>
                         <p className="error-message">{errors.address?.message}</p>
@@ -128,7 +128,7 @@ const CheckOutPage = ({cartItems, setCartItems}) => {
                     <p>Order total</p>
                     <p className="total-cost">&#8358; {totalCost.toLocaleString('en-US')}</p>
                 </div>
-                <Button>confirm & pay</Button>
+                <Button>Confirm & Pay</Button>
             </div>
          </form>
          <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)} style={{

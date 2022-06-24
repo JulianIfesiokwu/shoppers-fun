@@ -34,6 +34,11 @@ const StyledCartPage = styled.section`
         width: 45%;
     }
 
+    .product-title {
+        font-weight: 600;
+        color: var(--primary-color);
+    }
+
     .quantity, .price {
         width: 20%;
         text-align: center;
@@ -43,6 +48,7 @@ const StyledCartPage = styled.section`
         font-size: 1.3rem;
         font-weight: bold;
         text-align: center;
+        color: var(--primary-color);
     }
 
     .product-quantity {
@@ -51,6 +57,16 @@ const StyledCartPage = styled.section`
         border: 1px solid #ddd;
         font-size: 1.25rem;
         margin: 0 1rem;
+    }
+
+    .minus {
+        color: var(--secondary-color);
+        font-weight: 700;
+    }
+
+    .add {
+        color: var(--primary-color);
+        font-weight: 700;
     }
 
     .pay-btn {
@@ -67,6 +83,10 @@ const StyledCartPage = styled.section`
 
         .product-quantity, .minus {
             margin-bottom: 1rem;
+        }
+
+        .product-title {
+            font-size: 0.9rem;
         }
     }
 `;

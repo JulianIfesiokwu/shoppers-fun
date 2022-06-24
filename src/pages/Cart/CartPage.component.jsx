@@ -24,7 +24,7 @@ const CartPage = ({ cartItems, setCartItems, addToCart, removeFromCart }) => {
                 <thead>
                 <tr className="cart-items">
                     <th>Item</th>
-                    <th>Name</th>
+                    <th>Description</th>
                     <th>Quantity</th>
                     <th>Price (&#8358;)</th>
                 </tr>
@@ -39,7 +39,7 @@ const CartPage = ({ cartItems, setCartItems, addToCart, removeFromCart }) => {
                                 <img src={image} alt='' />
                             </td>
                             <td className="details">
-                                <p>{title}</p>
+                                <p className="product-title">{title}</p>
                             </td>
                             <td className="quantity">
                                 <span className='minus' onClick={() => removeFromCart(product)}><MdRemove size='20' className="icon" /></span>
@@ -55,7 +55,7 @@ const CartPage = ({ cartItems, setCartItems, addToCart, removeFromCart }) => {
                     <tr>
                         <td></td>
                         <td>Total payable: </td>
-                        <td><Link to='/checkout'><Button className="pay-btn">go to checkout</Button></Link></td>
+                        <td><Link to='/checkout'><Button className="pay-btn">Checkout</Button></Link></td>
                         <td className="total-amount">{totalAmount.toLocaleString('en-US')}</td>
                     </tr>
                 </tfoot>

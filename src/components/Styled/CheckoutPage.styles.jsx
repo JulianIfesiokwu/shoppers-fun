@@ -62,6 +62,7 @@ const StyledCheckoutPage = styled.div`
     .total-amount, .total-cost {
         font-weight: 700;
         font-size: 1.2rem;
+        color: var(--primary-color);
     }
 
     .final {
@@ -89,7 +90,7 @@ const StyledCheckoutPage = styled.div`
 
     .error-message {
         font-size: 0.7rem;
-        color: red;
+        color: var(--secondary-color);
         margin-bottom: 1rem;
     }
 
@@ -100,6 +101,7 @@ const StyledCheckoutPage = styled.div`
     .total-quantity {
         font-weight: 700;
         font-size: 1.4rem;
+        color: var(--primary-color);
     }
 
     .shipping-details {
