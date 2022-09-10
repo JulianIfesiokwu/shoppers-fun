@@ -112,6 +112,7 @@ const CheckOutPage = ({cartItems, setCartItems}) => {
                 </div>
             </div>
             <div className="sub-total">
+                <h3 className="address-title">Order details</h3>
                 <div className="row">
                     <p>Subtotal <span className="total-quantity">{totalQuantity}</span> items</p>
                     <p className="total-amount">&#8358; {totalAmount.toLocaleString('en-US')}</p>

@@ -116,6 +116,7 @@ const StyledCheckoutPage = styled.div`
 
         .personal-info, .sub-total {
             width: 100%;
+            margin-bottom: 1rem;
         }
 
         .card-input, .address-input {
